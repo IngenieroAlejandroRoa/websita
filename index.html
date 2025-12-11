@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alejandro Roa – Portafolio</title>
+  <style>
+    :root {
+      --main-color: #0077b6;
+      --accent-color: #00b4d8;
+      --bg-color: #f0f4f8;
+      --text-color: #1e1e1e;
+      --card-bg: white;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .projects ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .projects li {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #e0f7fa;
+      border-left: 5px solid var(--accent-color);
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #e3f2fd;
+      font-size: 0.9rem;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--main-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Alejandro Roa Aparicio</h1>
+    <p>Ingeniero en formación | AWS | Robótica | Visión Artificial | Ciencia de Datos</p>
+  </header>
+
+  <nav>
+    <a href="#about">Sobre mí</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <section id="about" class="card">
+    <h2>Sobre mí</h2>
+    <p>Hola 👋, soy estudiante de Ingeniería de Sistemas (8º semestre) y Mecatrónica (7º semestre), apasionado por la tecnología, los datos y la innovación. He trabajado en proyectos de robótica, visión artificial y ciencia de datos, especialmente en plataformas como AWS.</p>
+    <p>Me especializo en construir soluciones prácticas con código limpio y documentación clara.</p>
+  </section>
+
+  <section id="projects" class="card projects">
+    <h2>Proyectos Destacados</h2>
+    <ul>
+      <li><strong>Robot_Angel:</strong> IDE open source para robótica educativa con soporte Micro-ROS.</li>
+      <li><strong>DataXperience - Meteoritos NASA:</strong> Análisis de dataset público con pandas y visualización en Python.</li>
+      <li><strong>ETL SuperMart:</strong> Pipeline de datos en Python para procesamiento de ventas.</li>
+      <li><strong>Controladores de Movimiento:</strong> Algoritmos para robots con microcontroladores.</li>
+    </ul>
+    <a class="button" href="https://github.com/IngenieroAlejandroRoa" target="_blank">Ver más en GitHub</a>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contacto</h2>
+    <p>¿Interesado en colaborar o ver más de mi trabajo? Conéctate conmigo en LinkedIn:</p>
+    <a class="button" href="https://www.linkedin.com/in/alejandro-roa-aparicio-0846211ab/" target="_blank">LinkedIn</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Alejandro Roa – Bogotá, Colombia</p>
+  </footer>
+
+</body>
+</html>
+
