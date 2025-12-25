@@ -1,153 +1,150 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alejandro Roa – Portafolio</title>
-  <style>
-    :root {
-      --main-color: #0077b6;
-      --accent-color: #00b4d8;
-      --bg-color: #f0f4f8;
-      --text-color: #1e1e1e;
-      --card-bg: white;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--main-color), var(--accent-color));
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    nav {
-      background: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: var(--main-color);
-      font-weight: bold;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    .projects ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .projects li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: #e0f7fa;
-      border-left: 5px solid var(--accent-color);
-      border-radius: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #e3f2fd;
-      font-size: 0.9rem;
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: var(--main-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    a.button:hover {
-      background-color: var(--accent-color);
-    }
-  </style>
+  <title>Engineer Alejandro Roa – Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Alejandro Roa Aparicio (El inge más lindo y pitudo uwu)</h1>
-    <p>Ingeniero en formación | AWS | Robótica | Visión Artificial | Linux</p>
-  </header>
+<header class="hero-section">
+  <div class="lang-switch">
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('es')">ES</button>
+  </div>
 
-  <nav>
-    <a href="#about">Sobre mí</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#contact">Contacto</a>
-  </nav>
+  <div class="intro">
+    <img src="your-photo.jpg" alt="Alejandro Roa" class="profile-pic" />
+    <h1 data-en="Alejandro Roa" data-es="Alejandro Roa">Alejandro Roa</h1>
+    <p data-en="Mechatronics Engineer & Software Engineer" 
+       data-es="Ingeniero Mecatrónico y de Software">
+      Mechatronics Engineer & Software Engineer
+    </p>
+  </div>
+</header>
 
-  <section id="about" class="card">
-    <h2>Sobre mí</h2>
-    <p>Hola 👋, soy estudiante de Ingeniería de Sistemas (8º semestre) y Mecatrónica (7º semestre), apasionado por la tecnología, los datos y la innovación. He trabajado en proyectos de robótica, visión artificial y ciencia de datos, especialmente en plataformas como AWS.</p>
-    <p>Me especializo en construir soluciones prácticas con código limpio y documentación clara.</p>
-  </section>
+<section class="projects-outstanding">
+  <h2 data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
+  <div class="project-cards">
+    <div class="project-card">
+      <img src="short-circuit.jpg" alt="Short Circuit Outreach" />
+      <h3>Short Circuit</h3>
+      <p data-en="Science Outreach" data-es="Divulgación Científica">Science Outreach</p>
+    </div>
+    <div class="project-card">
+      <img src="angel-robot.jpg" alt="Angel Robot IDE" />
+      <h3>Angel Robot</h3>
+      <p data-en="Open Source Robotics IDE" data-es="IDE Robótico de Código Abierto">
+        Open Source Robotics IDE
+      </p>
+    </div>
+  </div>
+</section>
 
-  <section id="projects" class="card projects">
-    <h2>Proyectos Destacados</h2>
-    <ul>
-      <li><strong>Robot_Angel:</strong> IDE open source para robótica educativa con soporte Micro-ROS.</li>
-      <li><strong>DataXperience - Meteoritos NASA:</strong> Análisis de dataset público con pandas y visualización en Python.</li>
-      <li><strong>ETL SuperMart:</strong> Pipeline de datos en Python para procesamiento de ventas.</li>
-      <li><strong>Controladores de Movimiento:</strong> Algoritmos para robots con microcontroladores.</li>
-    </ul>
-    <a class="button" href="https://github.com/IngenieroAlejandroRoa" target="_blank">Ver más en GitHub</a>
-  </section>
+<section class="about-engineer">
+  <h2 data-en="The Engineer Behind the Screen"
+      data-es="El Ingeniero Detrás de la Pantalla">
+    The Engineer Behind the Screen
+  </h2>
 
-  <section id="contact" class="card">
-    <h2>Contacto</h2>
-    <p>¿Interesado en colaborar o ver más de mi trabajo? Conéctate conmigo en LinkedIn:</p>
-    <a class="button" href="https://www.linkedin.com/in/alejandro-roa-aparicio-0846211ab/" target="_blank">LinkedIn</a>
-  </section>
+  <div class="carousel" id="expCarousel">
+    <button class="prev" onclick="moveSlide(-1, 'expCarousel')">&#10094;</button>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h3>Company A – Senior Engineer</h3>
+        <p>2019–2022</p>
+      </div>
+      <div class="carousel-item">
+        <h3>Company B – Robotics Lead</h3>
+        <p>2016–2019</p>
+      </div>
+      <!-- More experience here -->
+    </div>
+    <button class="next" onclick="moveSlide(1, 'expCarousel')">&#10095;</button>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Alejandro Roa – Bogotá, Colombia</p>
-  </footer>
+<section class="skills">
+  <h2 data-en="Skills" data-es="Habilidades">Skills</h2>
+  <div class="grid skills-grid">
+    <div>Python</div>
+    <div>C/C++</div>
+    <div>ROS</div>
+    <div>SolidWorks</div>
+    <div>Flutter</div>
+    <div>AI/ML</div>
+    <!-- Add more -->
+  </div>
+</section>
 
+<section class="learning">
+  <h2 data-en="Currently Learning" data-es="Aprendiendo Actualmente">
+    Currently Learning
+  </h2>
+  <div class="grid learning-grid">
+    <div>Rust</div>
+    <div>TensorFlow.js</div>
+    <div>Autonomous Systems</div>
+    <div>Docker/Kubernetes</div>
+    <!-- Add more -->
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h2 data-en="Upcoming Goals" data-es="Objetivos Próximos">Upcoming Goals</h2>
+  <div class="carousel" id="goalsCarousel">
+    <button class="prev" onclick="moveSlide(-1, 'goalsCarousel')">&#10094;</button>
+    <div class="carousel-inner">
+      <div class="carousel-item active"><p>Launch Angel Robot v2</p></div>
+      <div class="carousel-item"><p>Publish Robotics Paper</p></div>
+      <!-- Add goals -->
+    </div>
+    <button class="next" onclick="moveSlide(1, 'goalsCarousel')">&#10095;</button>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h2 data-en="Certificates" data-es="Certificados">Certificates</h2>
+  <div class="carousel" id="certCarousel">
+    <button class="prev" onclick="moveSlide(-1, 'certCarousel')">&#10094;</button>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="https://creadly.link/cert1"><img src="cert1.jpg" /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://creadly.link/cert2"><img src="cert2.jpg" /></a>
+      </div>
+      <!-- More certificates -->
+    </div>
+    <button class="next" onclick="moveSlide(1, 'certCarousel')">&#10095;</button>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h2 data-en="More Projects" data-es="Más Proyectos">More Projects</h2>
+  <div class="carousel" id="projectsCarousel">
+    <button class="prev" onclick="moveSlide(-1, 'projectsCarousel')">&#10094;</button>
+    <div class="carousel-inner">
+      <div class="carousel-item active"><img src="project1.jpg" /></div>
+      <div class="carousel-item"><img src="project2.jpg" /></div>
+      <!-- Add project images -->
+    </div>
+    <button class="next" onclick="moveSlide(1, 'projectsCarousel')">&#10095;</button>
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2 data-en="Contact" data-es="Contacto">Contact</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Name" required />
+    <input type="email" placeholder="Email" required />
+    <textarea placeholder="Message..." required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script src="main.js"></script>
 </body>
 </html>
 
