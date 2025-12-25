@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+deploy.log
+logs/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Temporary
+*.tmp
+*.temp
+
+# Keep git-hooks for auto-deploy
+!.git-hooks/

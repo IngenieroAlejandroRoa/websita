@@ -2,22 +2,27 @@ version: '3.8'
 
 services:
   website:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: alejandroroa-portfolio:latest
     container_name: alejandroroa-websita
     restart: unless-stopped
     ports:
       - "8080:80"
     networks:
       - website_network
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
+    environment:
+      - NODE_ENV=production
     labels:
       - "com.docker.compose.project=alejandroroa"
       - "description=Alejandro Roa personal website"
+      - "auto-deploy=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   website_network:

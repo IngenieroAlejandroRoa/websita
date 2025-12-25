@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Git post-merge hook for auto-deploy
+# This runs automatically after 'git pull'
+
+echo "🔔 Post-merge hook triggered"
+
+# Check if we're in a Docker environment or have docker-compose available
+if command -v docker-compose &> /dev/null; then
+    echo "🐳 Docker detected, running auto-deploy..."
+    
+    # Run deploy script in background
+    nohup ./deploy.sh > deploy.log 2>&1 &
+    
+    echo "✅ Auto-deploy started in background. Check deploy.log for progress."
+else
+    echo "⚠️  Docker not found. Skipping auto-deploy."
+    echo "💡 To deploy manually, run: ./deploy.sh"
+fi

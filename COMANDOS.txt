@@ -1,0 +1,33 @@
+═══════════════════════════════════════════════════════════════
+🚀 COMANDOS RÁPIDOS
+═══════════════════════════════════════════════════════════════
+
+LOCAL DEVELOPMENT:
+  npm install && npm run dev
+
+PRODUCTION BUILD:
+  npm run build
+
+SERVIDOR - SETUP INICIAL (solo una vez):
+  ./setup-server.sh
+  ./deploy.sh
+
+SERVIDOR - ACTUALIZAR (automático después de setup):
+  git pull
+  → Auto-deploy se ejecuta automáticamente
+
+SERVIDOR - DEPLOY MANUAL:
+  ./deploy.sh
+
+MONITOREO:
+  docker-compose ps              # Estado
+  docker-compose logs -f         # Logs en vivo
+  cat deploy.log                 # Log del último deploy
+  curl localhost:8080/health     # Health check
+
+CONTROL:
+  docker-compose restart         # Reiniciar
+  docker-compose down            # Detener
+  docker-compose up -d           # Iniciar
+
+═══════════════════════════════════════════════════════════════
