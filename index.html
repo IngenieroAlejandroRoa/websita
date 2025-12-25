@@ -1,150 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Engineer Alejandro Roa – Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Alejandro Roa | Mechatronics & Software Engineer</title>
+    <meta name="description" content="Alejandro Roa - Mechatronics Engineer & Software Engineer. Explore my portfolio featuring robotics projects, software development, and science outreach initiatives." />
+    <meta name="keywords" content="Mechatronics Engineer, Software Engineer, Robotics, Programming, Portfolio, Alejandro Roa" />
+    <meta name="author" content="Alejandro Roa" />
+    
+    <meta property="og:title" content="Alejandro Roa | Mechatronics & Software Engineer" />
+    <meta property="og:description" content="Explore my portfolio featuring robotics projects, software development, and science outreach initiatives." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-<header class="hero-section">
-  <div class="lang-switch">
-    <button onclick="switchLang('en')">EN</button>
-    <button onclick="switchLang('es')">ES</button>
-  </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AlejandroRoa" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <link rel="canonical" href="https://alejandroroa.com" />
+  </head>
 
-  <div class="intro">
-    <img src="your-photo.jpg" alt="Alejandro Roa" class="profile-pic" />
-    <h1 data-en="Alejandro Roa" data-es="Alejandro Roa">Alejandro Roa</h1>
-    <p data-en="Mechatronics Engineer & Software Engineer" 
-       data-es="Ingeniero Mecatrónico y de Software">
-      Mechatronics Engineer & Software Engineer
-    </p>
-  </div>
-</header>
-
-<section class="projects-outstanding">
-  <h2 data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
-  <div class="project-cards">
-    <div class="project-card">
-      <img src="short-circuit.jpg" alt="Short Circuit Outreach" />
-      <h3>Short Circuit</h3>
-      <p data-en="Science Outreach" data-es="Divulgación Científica">Science Outreach</p>
-    </div>
-    <div class="project-card">
-      <img src="angel-robot.jpg" alt="Angel Robot IDE" />
-      <h3>Angel Robot</h3>
-      <p data-en="Open Source Robotics IDE" data-es="IDE Robótico de Código Abierto">
-        Open Source Robotics IDE
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="about-engineer">
-  <h2 data-en="The Engineer Behind the Screen"
-      data-es="El Ingeniero Detrás de la Pantalla">
-    The Engineer Behind the Screen
-  </h2>
-
-  <div class="carousel" id="expCarousel">
-    <button class="prev" onclick="moveSlide(-1, 'expCarousel')">&#10094;</button>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <h3>Company A – Senior Engineer</h3>
-        <p>2019–2022</p>
-      </div>
-      <div class="carousel-item">
-        <h3>Company B – Robotics Lead</h3>
-        <p>2016–2019</p>
-      </div>
-      <!-- More experience here -->
-    </div>
-    <button class="next" onclick="moveSlide(1, 'expCarousel')">&#10095;</button>
-  </div>
-</section>
-
-<section class="skills">
-  <h2 data-en="Skills" data-es="Habilidades">Skills</h2>
-  <div class="grid skills-grid">
-    <div>Python</div>
-    <div>C/C++</div>
-    <div>ROS</div>
-    <div>SolidWorks</div>
-    <div>Flutter</div>
-    <div>AI/ML</div>
-    <!-- Add more -->
-  </div>
-</section>
-
-<section class="learning">
-  <h2 data-en="Currently Learning" data-es="Aprendiendo Actualmente">
-    Currently Learning
-  </h2>
-  <div class="grid learning-grid">
-    <div>Rust</div>
-    <div>TensorFlow.js</div>
-    <div>Autonomous Systems</div>
-    <div>Docker/Kubernetes</div>
-    <!-- Add more -->
-  </div>
-</section>
-
-<section class="carousel-section">
-  <h2 data-en="Upcoming Goals" data-es="Objetivos Próximos">Upcoming Goals</h2>
-  <div class="carousel" id="goalsCarousel">
-    <button class="prev" onclick="moveSlide(-1, 'goalsCarousel')">&#10094;</button>
-    <div class="carousel-inner">
-      <div class="carousel-item active"><p>Launch Angel Robot v2</p></div>
-      <div class="carousel-item"><p>Publish Robotics Paper</p></div>
-      <!-- Add goals -->
-    </div>
-    <button class="next" onclick="moveSlide(1, 'goalsCarousel')">&#10095;</button>
-  </div>
-</section>
-
-<section class="carousel-section">
-  <h2 data-en="Certificates" data-es="Certificados">Certificates</h2>
-  <div class="carousel" id="certCarousel">
-    <button class="prev" onclick="moveSlide(-1, 'certCarousel')">&#10094;</button>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <a href="https://creadly.link/cert1"><img src="cert1.jpg" /></a>
-      </div>
-      <div class="carousel-item">
-        <a href="https://creadly.link/cert2"><img src="cert2.jpg" /></a>
-      </div>
-      <!-- More certificates -->
-    </div>
-    <button class="next" onclick="moveSlide(1, 'certCarousel')">&#10095;</button>
-  </div>
-</section>
-
-<section class="carousel-section">
-  <h2 data-en="More Projects" data-es="Más Proyectos">More Projects</h2>
-  <div class="carousel" id="projectsCarousel">
-    <button class="prev" onclick="moveSlide(-1, 'projectsCarousel')">&#10094;</button>
-    <div class="carousel-inner">
-      <div class="carousel-item active"><img src="project1.jpg" /></div>
-      <div class="carousel-item"><img src="project2.jpg" /></div>
-      <!-- Add project images -->
-    </div>
-    <button class="next" onclick="moveSlide(1, 'projectsCarousel')">&#10095;</button>
-  </div>
-</section>
-
-<section class="contact-section">
-  <h2 data-en="Contact" data-es="Contacto">Contact</h2>
-  <form class="contact-form">
-    <input type="text" placeholder="Name" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="Message..." required></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-<script src="main.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-

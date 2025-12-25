@@ -1,15 +1,32 @@
-# Usa una imagen base de Nginx
+# Build stage
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the app
+RUN npm run build
+
+# Production stage
 FROM nginx:alpine
 
-# Borra la configuración default de Nginx
+# Remove default nginx config
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copia el contenido de tu web (HTML/CSS/JS) al directorio web de Nginx
-COPY index.html styles.css main.js /usr/share/nginx/html/
+# Copy built files from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Exponer el puerto 80
+# Expose port 80
 EXPOSE 80
 
-# El contenedor ejecutará Nginx en modo foreground
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 

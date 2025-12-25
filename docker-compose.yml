@@ -7,11 +7,6 @@ services:
     restart: unless-stopped
     ports:
       - "8080:80"
-    volumes:
-      # Mount the repository directory (LXC will handle git pulls)
-      - ./:/usr/share/nginx/html:ro
-      # Persistent nginx logs
-      - ./logs:/var/log/nginx
     networks:
       - website_network
     healthcheck:
@@ -22,7 +17,7 @@ services:
       start_period: 10s
     labels:
       - "com.docker.compose.project=alejandroroa"
-      - "description=Alejandro Roa personal website (LXC managed)"
+      - "description=Alejandro Roa personal website"
 
 networks:
   website_network:
