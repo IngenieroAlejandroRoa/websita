@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xl font-bold text-primary">
-            Alejandro Roa
+            Alejandro Roa Aparicio
           </div>
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Alejandro Roa. {t('footer.rights')}
+            © {currentYear} Alejandro Roa Aparicio. {t('footer.rights')}
           </p>
         </div>
       </div>

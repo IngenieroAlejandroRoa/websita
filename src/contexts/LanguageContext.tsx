@@ -11,6 +11,7 @@ interface LanguageContextType {
 const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
+    'nav.logo': 'Engineer Alejandro Roa',
     'nav.home': 'Home',
     'nav.projects': 'Projects',
     'nav.experience': 'Experience',
@@ -38,21 +39,47 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'The Engineer Behind the Screen',
-    'about.description': 'Passionate about bridging the gap between hardware and software, I create innovative solutions that push the boundaries of what\'s possible in robotics and automation.',
+    'about.description': 'Behind this profession, I am a passionate person who overflows with intensity, for basketball, being a university champion. I participate in powerlifting, love my family, partner, and friends intensely, enjoy driving, good cinema, art, and philosophy—how not to be entertained with Diogenes the dog? And of course, I am a geek passionate about technology and science. But above all, I am a dreamer, and right now there is one very big goal: someday, my own research and development center in Bogotá, Colombia, supporting the talent from where I grew up.',
     
     // Experience
     'experience.title': 'Work Experience',
     'experience.subtitle': 'My professional journey',
+    'experience.0.title': 'Research Intern',
+    'experience.0.company': 'Innovation and Transfer Management, Universidad EAN',
+    'experience.0.period': 'Present',
+    'experience.0.description': 'Developing an environmental monitoring system with real-time visualization and prediction for the research management of Universidad EAN.',
+    'experience.1.title': 'Junior Programmer',
+    'experience.1.company': 'Freelancer',
+    'experience.1.period': '2025',
+    'experience.1.description': 'Developed a Linux simulation with Geolandspill for crude oil spill modeling for an oil company.',
+    'experience.2.title': 'Assistant Teacher',
+    'experience.2.company': 'Fundación Nuevo Amanecer ESAL Chocó and Universidad EAN',
+    'experience.2.period': '2025',
+    'experience.2.description': 'Taught classes in the STEMChocó project, achieving the construction of a CANSAT with low-income girls.',
+    'experience.3.title': 'University Tutor - Circuits',
+    'experience.3.company': 'Universidad EAN',
+    'experience.3.period': '2025',
+    'experience.3.description': 'Provided tutoring and collaborated in directing class laboratories for the Circuits subject.',
+    'experience.4.title': 'University Tutor - Electronics',
+    'experience.4.company': 'Universidad EAN',
+    'experience.4.period': '2025',
+    'experience.4.description': 'Provided tutoring and collaborated in directing class laboratories for the Electronics subject.',
     
     // Skills
     'skills.title': 'Skills & Expertise',
     'skills.learning': 'Currently Learning',
     'skills.goals': 'Upcoming Goals',
     'skills.robotics': 'Robotics & Programming',
-    'skills.certificates': 'Certifications',
+    
+    // Badges
+    'badges.title': 'Badges',
+    'badges.subtitle': 'Professional certifications and achievements',
+    'badges.credlyTitle': 'View My Badges',
+    'badges.credlyDesc': 'Verified certifications on Credly',
+    'badges.viewBadges': 'Open Credly Profile',
     
     // Projects
-    'projects.title': 'All Projects',
+    'projects.title': 'Other interesting projects...',
     'projects.subtitle': 'A collection of my work',
     
     // Contact
@@ -69,6 +96,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   es: {
     // Navigation
+    'nav.logo': 'Ingeniero Alejandro Roa',
     'nav.home': 'Inicio',
     'nav.projects': 'Proyectos',
     'nav.experience': 'Experiencia',
@@ -94,23 +122,49 @@ const translations: Record<Language, Record<string, string>> = {
     'featured.angelrobot.desc': 'Un entorno de desarrollo intuitivo para programar y controlar sistemas robóticos con interfaces visuales y basadas en código.',
     'featured.learnmore': 'Saber Más',
     
-    // About
+    // Acerca de
     'about.title': 'El Ingeniero Detrás de la Pantalla',
-    'about.description': 'Apasionado por cerrar la brecha entre hardware y software, creo soluciones innovadoras que expanden los límites de lo posible en robótica y automatización.',
+    'about.description': 'Detrás de esta profesión soy una persona apasionada, desbordante de intensidad, por el basketball siendo campeón universitario, participo en powerlifting, amo con intensidad a mi familia, pareja y amigos, me encanta conducir, el buen cine, el arte, la filosofía, cómo no entretenerse con Diógenes el perro, y por supuesto soy un geek apasionado por la tecnología y la ciencia, pero sobre todo soy un soñador y en este momento hay 1 objetivo muy grande, algún día mi propio centro de investigación y desarrollo en Bogotá Colombia apoyando el talento de donde crecí.',
     
-    // Experience
+    // Experiencia
     'experience.title': 'Experiencia Laboral',
     'experience.subtitle': 'Mi trayectoria profesional',
+    'experience.0.title': 'Investigador Interno',
+    'experience.0.company': 'Gerencia de Innovación y Transferencia, Universidad EAN',
+    'experience.0.period': 'Presente',
+    'experience.0.description': 'Desarrollando un sistema de monitoreo ambiental con visualización y predicción en tiempo real para la gerencia de investigación de la Universidad EAN.',
+    'experience.1.title': 'Programador Junior',
+    'experience.1.company': 'Freelancer',
+    'experience.1.period': '2025',
+    'experience.1.description': 'Desarrollé una simulación en Linux con Geolandspill sobre el derrame de crudo para una petrolera.',
+    'experience.2.title': 'Profesor Asistente',
+    'experience.2.company': 'Fundación Nuevo Amanecer ESAL Chocó y Universidad EAN',
+    'experience.2.period': '2025',
+    'experience.2.description': 'Impartí clases en el proyecto STEMChocó, con las cuales logramos realizar un CANSAT con niñas de bajos recursos.',
+    'experience.3.title': 'Monitor Universitario - Circuitos',
+    'experience.3.company': 'Universidad EAN',
+    'experience.3.period': '2025',
+    'experience.3.description': 'Impartí monitorías y colaboré en la dirección de laboratorios de clase para la materia de Circuitos.',
+    'experience.4.title': 'Monitor Universitario - Electrónica',
+    'experience.4.company': 'Universidad EAN',
+    'experience.4.period': '2025',
+    'experience.4.description': 'Impartí monitorías y colaboré en la dirección de laboratorios de clase para la materia de Electrónica.',
     
-    // Skills
+    // Habilidades
     'skills.title': 'Habilidades y Experiencia',
     'skills.learning': 'Aprendiendo Actualmente',
     'skills.goals': 'Próximas Metas',
     'skills.robotics': 'Robótica y Programación',
-    'skills.certificates': 'Certificaciones',
+    
+    // Insignias
+    'badges.title': 'Insignias',
+    'badges.subtitle': 'Certificaciones profesionales y logros',
+    'badges.credlyTitle': 'Ver Mis Insignias',
+    'badges.credlyDesc': 'Certificaciones verificadas en Credly',
+    'badges.viewBadges': 'Abrir Perfil de Credly',
     
     // Projects
-    'projects.title': 'Todos los Proyectos',
+    'projects.title': 'Otros proyectos interesantes...',
     'projects.subtitle': 'Una colección de mi trabajo',
     
     // Contact

@@ -52,40 +52,12 @@ const roboticsSkills = [
   { name: 'PLC Programming', level: 70 },
 ];
 
-const certificates = [
-  {
-    name: 'AWS Certified Developer',
-    issuer: 'Amazon Web Services',
-    credlyUrl: 'https://www.credly.com',
-  },
-  {
-    name: 'Google Cloud Professional',
-    issuer: 'Google',
-    credlyUrl: 'https://www.credly.com',
-  },
-  {
-    name: 'ROS Developer',
-    issuer: 'Open Robotics',
-    credlyUrl: 'https://www.credly.com',
-  },
-  {
-    name: 'Python Professional',
-    issuer: 'Python Institute',
-    credlyUrl: 'https://www.credly.com',
-  },
-  {
-    name: 'Agile Scrum Master',
-    issuer: 'Scrum Alliance',
-    credlyUrl: 'https://www.credly.com',
-  },
-];
-
 const SkillsSection = () => {
   const { t } = useLanguage();
   const { ref, isInView } = useInView();
 
   return (
-    <section id="skills" ref={ref} className="py-20 md:py-32 bg-background">
+    <section id="skills" ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -177,8 +149,8 @@ const SkillsSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12" />
-              <CarouselNext className="hidden md:flex -right-12" />
+              <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90" />
+              <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90" />
             </Carousel>
           </div>
         </div>
@@ -215,60 +187,13 @@ const SkillsSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12" />
-              <CarouselNext className="hidden md:flex -right-12" />
+              <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90" />
+              <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90" />
             </Carousel>
           </div>
         </div>
 
-        {/* Certificates Carousel */}
-        <div>
-          <h3
-            className={`text-2xl font-bold mb-8 text-center ${
-              isInView ? 'animate-fade-in' : 'opacity-0'
-            }`}
-          >
-            <Award className="inline-block mr-2 h-6 w-6 text-primary" />
-            {t('skills.certificates')}
-          </h3>
-          <div className="max-w-5xl mx-auto">
-            <Carousel opts={{ align: 'start', loop: true }}>
-              <CarouselContent className="-ml-4">
-                {certificates.map((cert, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                    <a
-                      href={cert.credlyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                        <CardContent className="p-6">
-                          <div className="flex items-center gap-4 mb-4">
-                            <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                              <Award className="h-6 w-6" />
-                            </div>
-                            <div>
-                              <h4 className="font-bold group-hover:text-primary transition-colors">
-                                {cert.name}
-                              </h4>
-                              <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                            </div>
-                          </div>
-                          <Badge variant="outline" className="text-primary border-primary">
-                            View on Credly →
-                          </Badge>
-                        </CardContent>
-                      </Card>
-                    </a>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12" />
-              <CarouselNext className="hidden md:flex -right-12" />
-            </Carousel>
-          </div>
-        </div>
+
       </div>
     </section>
   );

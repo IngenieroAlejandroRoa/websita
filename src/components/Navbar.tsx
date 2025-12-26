@@ -51,7 +51,7 @@ const Navbar = () => {
             }}
             className="text-xl md:text-2xl font-bold text-primary transition-colors hover:text-primary/80"
           >
-            AR
+            {t('nav.logo')}
           </a>
 
           {/* Desktop Navigation */}
@@ -64,7 +64,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-foreground/70 hover:text-primary transition-colors font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                className="text-red-600 hover:text-red-700 transition-colors font-bold relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -96,7 +96,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="block py-3 text-foreground/70 hover:text-primary transition-colors font-medium"
+                className="block py-3 text-red-600 hover:text-red-700 transition-colors font-bold"
               >
                 {link.label}
               </a>

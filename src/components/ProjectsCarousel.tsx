@@ -19,8 +19,8 @@ const projects = [
     description: 'AI-powered drone navigation system with real-time obstacle avoidance.',
     tags: ['Python', 'ROS2', 'Computer Vision'],
     image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=300&fit=crop',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
     id: 2,
@@ -28,8 +28,8 @@ const projects = [
     description: 'IoT platform for home automation with voice control and mobile app.',
     tags: ['React', 'Node.js', 'ESP32'],
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const projects = [
     description: 'Custom 6-DOF robotic arm with precision control for manufacturing.',
     tags: ['C++', 'ROS', 'CAD'],
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
     id: 4,
@@ -46,8 +46,8 @@ const projects = [
     description: 'Automated machine learning pipeline for data processing and model training.',
     tags: ['Python', 'TensorFlow', 'Docker'],
     image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=300&fit=crop',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
     id: 5,
@@ -55,8 +55,8 @@ const projects = [
     description: 'Live monitoring system for industrial equipment with predictive maintenance.',
     tags: ['React', 'WebSocket', 'D3.js'],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
 ];
 
@@ -65,7 +65,7 @@ const ProjectsCarousel = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-card">
+    <section ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -76,7 +76,7 @@ const ProjectsCarousel = () => {
             {t('projects.title')}
           </h2>
           <p
-            className={`text-lg text-muted-foreground ${
+            className={`text-lg text-gray-600 ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -93,7 +93,7 @@ const ProjectsCarousel = () => {
             <CarouselContent className="-ml-4">
               {projects.map((project) => (
                 <CarouselItem key={project.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-500">
+                  <Card className="group overflow-hidden border-0 transition-all duration-500">
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={project.image}
@@ -125,11 +125,11 @@ const ProjectsCarousel = () => {
                         </Button>
                       </div>
                     </div>
-                    <CardContent className="p-6">
+                    <CardContent className="p-6 text-black">
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      <p className="text-white/80 text-sm mb-4 leading-relaxed">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -144,8 +144,8 @@ const ProjectsCarousel = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12" />
-            <CarouselNext className="hidden md:flex -right-12" />
+            <CarouselPrevious className="hidden md:flex -left-12 bg-red-600 text-white hover:bg-red-700 border-0" />
+            <CarouselNext className="hidden md:flex -right-12 bg-red-600 text-white hover:bg-red-700 border-0" />
           </Carousel>
         </div>
       </div>

@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-card" ref={ref}>
+    <section id="projects" className="py-20 md:py-32 bg-black text-white" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -43,7 +43,7 @@ const FeaturedProjects = () => {
             {t('featured.title')}
           </h2>
           <p
-            className={`text-lg text-muted-foreground max-w-2xl mx-auto ${
+            className={`text-lg text-white/80 max-w-2xl mx-auto ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -56,7 +56,7 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className={`group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 ${
+              className={`group overflow-hidden border-0 transition-all duration-500 ${
                 isInView ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${0.3 + index * 0.2}s` }}
@@ -73,12 +73,12 @@ const FeaturedProjects = () => {
                   <project.icon className="h-6 w-6 text-primary" />
                 </div>
               </div>
-              <CardContent className="p-6 md:p-8">
+              <CardContent className="p-6 md:p-8 text-black">
                 <span className="text-sm font-medium text-primary mb-2 block">
                   {project.subtitle}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-white/80 mb-6 leading-relaxed">
                   {project.description}
                 </p>
                 <Button

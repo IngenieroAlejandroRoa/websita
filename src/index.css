@@ -158,3 +158,60 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+/* Custom video positioning for hero section */
+@layer utilities {
+  @media (min-width: 1024px) {
+    .video-position-75 {
+      object-position: 75% center !important;
+    }
+  }
+}
+
+/* Custom card shadows with blur, spread, and offset */
+@layer utilities {
+  .shadow-card {
+    box-shadow: 
+      0 10px 30px -5px rgba(0, 0, 0, 0.3),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: 
+      0 20px 50px -10px rgba(0, 0, 0, 0.4),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-card-dark {
+    box-shadow: 
+      0 10px 30px -5px rgba(255, 255, 255, 0.1),
+      0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  }
+  
+  .shadow-card-dark-hover {
+    box-shadow: 
+      0 20px 50px -10px rgba(255, 255, 255, 0.15),
+      0 10px 15px -3px rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Custom shadow for carousel and grid cards */
+@layer utilities {
+  .shadow-custom {
+    box-shadow: -5px 4px 31px 2px rgba(0, 0, 0, 1.0);
+  }
+  
+  .shadow-custom-hover {
+    box-shadow: -5px 4px 50px 3px rgba(0, 0, 0, 1.0);
+  }
+}
+
+/* Custom white shadow for cards in dark sections */
+@layer utilities {
+  .shadow-custom-white {
+    box-shadow: -5px 4px 31px 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .shadow-custom-white-hover {
+    box-shadow: -5px 4px 50px 3px rgba(255, 255, 255, 0.4);
+  }
+}

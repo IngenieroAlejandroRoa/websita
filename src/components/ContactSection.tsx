@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -31,19 +31,18 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'contact@alejandroroa.com' },
-    { icon: MapPin, label: 'Location', value: 'Mexico City, Mexico' },
-    { icon: Phone, label: 'Phone', value: '+52 555 123 4567' },
+    { icon: Mail, label: 'Email', value: 'alejoroaaparicio@gmail.com' },
+    { icon: MapPin, label: 'Location', value: 'Bogotá, Colombia' },
+    { icon: Phone, label: 'Phone', value: '+57 321 468 5538' },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/IngenieroAlejandroRoa', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/alejandro-roa-aparicio-0846211ab/', label: 'LinkedIn' },
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="contact" ref={ref} className="py-20 md:py-32 bg-black text-white relative overflow-hidden" data-aos="fade-up">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
       
@@ -57,7 +56,7 @@ const ContactSection = () => {
             {t('contact.title')}
           </h2>
           <p
-            className={`text-lg text-muted-foreground ${
+            className={`text-lg text-gray-300 ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -69,25 +68,25 @@ const ContactSection = () => {
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card
-            className={`border-0 shadow-xl ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
+            className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
             style={{ animationDelay: '0.3s' }}
           >
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-black">
                     {t('contact.name')}
                   </label>
                   <Input
                     id="name"
                     name="name"
                     required
-                    placeholder="John Doe"
-                    className="bg-background"
+                    placeholder="Alejandro Roa"
+                    className="bg-gray-50 border-gray-200 text-black"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-black">
                     {t('contact.email')}
                   </label>
                   <Input
@@ -95,12 +94,12 @@ const ContactSection = () => {
                     name="email"
                     type="email"
                     required
-                    placeholder="john@example.com"
-                    className="bg-background"
+                    placeholder="Alejo@example.com"
+                    className="bg-gray-50 border-gray-200 text-black"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-black">
                     {t('contact.message')}
                   </label>
                   <Textarea
@@ -109,13 +108,13 @@ const ContactSection = () => {
                     required
                     rows={5}
                     placeholder="Tell me about your project..."
-                    className="bg-background resize-none"
+                    className="bg-gray-50 border-gray-200 text-black resize-none"
                   />
                 </div>
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full bg-primary hover:bg-primary/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -144,14 +143,25 @@ const ContactSection = () => {
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-card hover:bg-card/80 transition-colors"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-white hover:bg-gray-50 transition-colors border border-gray-200"
                 >
                   <div className="p-3 rounded-full bg-primary/10">
                     <info.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
+                    <p className="text-sm text-gray-600">{info.label}</p>
+                    {info.label === 'Email' ? (
+                      <div className="space-y-1">
+                        <a href="mailto:alejoroaaparicio@gmail.com" className="font-medium text-black hover:text-primary transition-colors block">
+                          alejoroaaparicio@gmail.com
+                        </a>
+                        <a href="mailto:aroaapa33136@universidadean.edu.co" className="font-medium text-sm text-gray-600 hover:text-primary transition-colors block">
+                          aroaapa33136@universidadean.edu.co
+                        </a>
+                      </div>
+                    ) : (
+                      <p className="font-medium text-black">{info.value}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -159,7 +169,7 @@ const ContactSection = () => {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">{t('contact.follow')}</h3>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <a
@@ -167,21 +177,14 @@ const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-card hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-md hover:shadow-lg group"
+                    className="p-4 rounded-full bg-white hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-6 w-6 transition-transform group-hover:scale-110" />
+                    <social.icon className="h-6 w-6 text-black group-hover:text-white transition-transform group-hover:scale-110" />
                   </a>
                 ))}
               </div>
             </div>
-
-            {/* Map placeholder */}
-            <Card className="border-0 shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <MapPin className="h-12 w-12 text-primary/50" />
-              </div>
-            </Card>
           </div>
         </div>
       </div>

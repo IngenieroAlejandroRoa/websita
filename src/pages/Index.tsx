@@ -5,6 +5,7 @@ import FeaturedProjects from '@/components/FeaturedProjects';
 import AboutSection from '@/components/AboutSection';
 import ExperienceCarousel from '@/components/ExperienceCarousel';
 import SkillsSection from '@/components/SkillsSection';
+import BadgesSection from '@/components/BadgesSection';
 import ProjectsCarousel from '@/components/ProjectsCarousel';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -20,6 +21,7 @@ const Index = () => {
           <AboutSection />
           <ExperienceCarousel />
           <SkillsSection />
+          <BadgesSection />
           <ProjectsCarousel />
           <ContactSection />
         </main>
