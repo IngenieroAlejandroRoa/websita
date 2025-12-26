@@ -1,54 +1,69 @@
-# 🚀 Auto-Deploy Setup
+# Guía de Despliegue en LXC
 
-## En tu LXC Debian (Servidor Proxmox)
+## Instalación Inicial en el LXC
 
-### Primera vez - Setup inicial:
-
+### 1. Instalar Node.js
 ```bash
-# 1. Clona el repo
-cd /opt
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt-get install -y nodejs
+```
+
+### 2. Clonar el repositorio (si no está)
+```bash
 git clone https://github.com/IngenieroAlejandroRoa/websita.git
 cd websita
-
-# 2. Instala Docker y Docker Compose si no los tienes
-sudo apt update
-sudo apt install -y docker.io docker-compose
-
-# 3. Da permisos al script
-chmod +x auto-deploy.sh
-
-# 4. Primera ejecución
-./auto-deploy.sh
 ```
 
-### Actualizaciones automáticas:
+### 3. Primera instalación
+```bash
+npm install
+npm run build
+```
 
-Cada vez que hagas `git push` desde tu máquina local, en el servidor ejecuta:
+### 4. Instalar PM2 para servir la página (recomendado)
+```bash
+npm install -g pm2
+pm2 start "npx serve dist -l 3000" --name websita
+pm2 startup
+pm2 save
+```
+
+## Auto-deploy con Git Pull
+
+Una vez configurado, cada vez que hagas:
 
 ```bash
-cd /opt/websita
-./auto-deploy.sh
+git pull
 ```
 
-Esto automáticamente:
-- ✅ Hace `git pull`
-- ✅ Detiene el contenedor anterior
-- ✅ Reconstruye la imagen con los cambios
-- ✅ Levanta el nuevo contenedor
-- ✅ La página estará en `http://TU_IP_LXC:8080`
+El hook `post-merge` automáticamente:
+1. ✅ Instalará dependencias si es necesario
+2. ✅ Hará el build
+3. ✅ Reiniciará PM2 si está instalado
 
-### Ver logs:
+## Comandos Útiles
+
+### Ver logs de PM2
 ```bash
-docker-compose logs -f
+pm2 logs websita
 ```
 
-### Detener:
+### Reiniciar manualmente
 ```bash
-docker-compose down
+pm2 restart websita
 ```
 
-## Workflow completo:
+### Build manual
+```bash
+./deploy.sh
+```
 
-1. **Local** → Haces cambios y `git push`
-2. **Servidor LXC** → `cd /opt/websita && ./auto-deploy.sh`
-3. **Listo** → Página actualizada en http://IP:8080
+### Servir sin PM2
+```bash
+npx serve dist -l 3000
+```
+
+## Acceder a la página
+
+- Local: http://localhost:3000
+- Red: http://[IP-DEL-LXC]:3000
