@@ -13,9 +13,13 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.logo': 'Engineer Alejandro Roa',
     'nav.home': 'Home',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Featured',
+    'nav.about': 'About',
     'nav.experience': 'Experience',
+    'nav.competitions': 'Competitions',
     'nav.skills': 'Skills',
+    'nav.badges': 'Badges',
+    'nav.allprojects': 'Projects',
     'nav.contact': 'Contact',
     
     // Hero
@@ -113,9 +117,13 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.logo': 'Ingeniero Alejandro Roa',
     'nav.home': 'Inicio',
-    'nav.projects': 'Proyectos',
+    'nav.projects': 'Destacados',
+    'nav.about': 'Sobre Mí',
     'nav.experience': 'Experiencia',
+    'nav.competitions': 'Competencias',
     'nav.skills': 'Habilidades',
+    'nav.badges': 'Insignias',
+    'nav.allprojects': 'Proyectos',
     'nav.contact': 'Contacto',
     
     // Hero

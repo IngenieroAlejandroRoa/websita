@@ -68,7 +68,7 @@ const ProjectsCarousel = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
+    <section id="all-projects" ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2

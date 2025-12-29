@@ -20,8 +20,12 @@ const Navbar = () => {
   const navLinks = [
     { href: '#home', label: t('nav.home') },
     { href: '#projects', label: t('nav.projects') },
+    { href: '#about', label: t('nav.about') },
     { href: '#experience', label: t('nav.experience') },
+    { href: '#competitions', label: t('nav.competitions') },
     { href: '#skills', label: t('nav.skills') },
+    { href: '#badges', label: t('nav.badges') },
+    { href: '#all-projects', label: t('nav.allprojects') },
     { href: '#contact', label: t('nav.contact') },
   ];
 

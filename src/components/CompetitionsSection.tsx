@@ -26,20 +26,16 @@ const CompetitionsSection = () => {
   }, [photos.length]);
 
   const highlights = [
-    { icon: Trophy, label: 'NASA Challenge', labelEn: 'NASA Challenge' },
-    { icon: Medal, label: 'Robótica', labelEn: 'Robotics' },
-    { icon: Award, label: 'Hackathon', labelEn: 'Hackathon' },
-    { icon: Target, label: 'Innovación', labelEn: 'Innovation' },
-    { icon: Zap, label: 'Rapidez', labelEn: 'Speed' },
-    { icon: Code, label: 'Programación', labelEn: 'Programming' },
-    { icon: Rocket, label: 'Lanzamiento', labelEn: 'Launch' },
-    { icon: Users, label: 'Equipo', labelEn: 'Team' },
-    { icon: Crown, label: 'Ganador', labelEn: 'Winner' },
-    { icon: Star, label: 'Excelencia', labelEn: 'Excellence' },
+    { icon: Award, label: 'Hackaton SostechPreneur 2025 EAN', labelEn: 'SostechPreneur 2025 Hackathon EAN' },
+    { icon: Trophy, label: 'RHA Robotics Internacional Batalla 1L', labelEn: 'RHA International Robotics Battle 1L' },
+    { icon: Rocket, label: 'CANSAT Congreso Internacional de Ingeniería y Automatización 2024', labelEn: 'CANSAT International Congress of Engineering and Automation 2024' },
+    { icon: Code, label: 'Hackaton Facultad de Ingeniería Universidad EAN 2023', labelEn: 'Engineering Faculty Hackathon EAN University 2023' },
+    { icon: Medal, label: 'Hackaton Facultad de Ingeniería Universidad EAN 2024', labelEn: 'Engineering Faculty Hackathon EAN University 2024' },
+    { icon: Crown, label: 'EAN BOT 2025', labelEn: 'EAN BOT 2025' },
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
+    <section id="competitions" ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
       <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4">
@@ -65,7 +61,7 @@ const CompetitionsSection = () => {
                 {t('competitions.description')}
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {highlights.map((item, index) => (
                   <div
                     key={`${item.label}-${index}`}
@@ -73,7 +69,7 @@ const CompetitionsSection = () => {
                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   >
                     <item.icon className="h-8 w-8 text-primary mb-2" />
-                    <span className="font-medium text-sm">{language === 'en' ? item.labelEn : item.label}</span>
+                    <span className="font-medium text-xs md:text-sm">{language === 'en' ? item.labelEn : item.label}</span>
                   </div>
                 ))}
               </div>

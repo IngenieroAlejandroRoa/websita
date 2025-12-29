@@ -39,7 +39,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
+    <section id="about" ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4">

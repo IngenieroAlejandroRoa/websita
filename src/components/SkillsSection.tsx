@@ -22,23 +22,52 @@ import {
   Rocket,
   Brain,
   Cog,
+  Box,
+  CircuitBoard,
+  Printer,
+  Boxes,
+  Smartphone,
+  Bot,
+  Cloud,
+  Users,
+  TrendingUp,
+  Crosshair,
+  Eye,
 } from 'lucide-react';
 
 const learningItems = [
-  { name: 'Machine Learning', icon: Brain, progress: 60 },
-  { name: 'Cloud Architecture', icon: Globe, progress: 45 },
-  { name: 'Advanced Robotics', icon: Cpu, progress: 70 },
-  { name: 'Rust Programming', icon: Code, progress: 30 },
-  { name: 'IoT Systems', icon: Zap, progress: 55 },
-  { name: 'Computer Vision', icon: Target, progress: 50 },
+  { name: 'Machine Learning & Deep Learning', nameEs: 'Machine Learning y Deep Learning', icon: Brain, progress: 60 },
+  { name: 'Advanced Robotics: ROS 2, URDF, ISAAC SIM', nameEs: 'Robótica Avanzada: ROS 2, URDF, ISAAC SIM', icon: Cpu, progress: 70 },
+  { name: 'Cloud Architecture', nameEs: 'Arquitectura en la Nube', icon: Globe, progress: 45 },
+  { name: 'IoT Systems ESP32', nameEs: 'Sistemas IoT ESP32', icon: Zap, progress: 55 },
+  { name: 'Linux & Raspberry Pi', nameEs: 'Linux y Raspberry Pi', icon: Code, progress: 65 },
+  { name: 'Computer Vision', nameEs: 'Visión por Computador', icon: Target, progress: 50 },
+];
+
+const skills = [
+  { name: 'Leadership', nameEs: 'Liderazgo', icon: Users },
+  { name: 'Persistence', nameEs: 'Persistencia', icon: TrendingUp },
+  { name: 'Discipline', nameEs: 'Disciplina', icon: Crosshair },
+  { name: 'Algorithms', nameEs: 'Algoritmos', icon: Code },
+  { name: '3D Design', nameEs: 'Diseño 3D', icon: Box },
+  { name: 'PCB Design', nameEs: 'Diseño de Circuitos Impresos', icon: CircuitBoard },
+  { name: '3D Printing', nameEs: 'Impresión 3D', icon: Printer },
+  { name: 'Prototyping', nameEs: 'Prototipado', icon: Boxes },
+  { name: 'Web & Mobile Development', nameEs: 'Desarrollo Web y Móvil', icon: Smartphone },
+  { name: 'Robotics', nameEs: 'Robótica', icon: Bot },
+  { name: 'Cloud Architecture', nameEs: 'Arquitectura de Nube', icon: Cloud },
+  { name: 'Computer Vision', nameEs: 'Visión Artificial', icon: Eye },
 ];
 
 const upcomingGoals = [
-  { title: 'AWS Solutions Architect Certification', icon: Award },
-  { title: 'Launch Open Source Robot Framework', icon: Rocket },
-  { title: 'Complete PhD in Robotics', icon: BookOpen },
-  { title: 'Build AI-Powered Home Assistant', icon: Brain },
-  { title: 'Contribute to ROS2 Core', icon: Cog },
+  { title: 'Robot Angel IDE #1 de Robótica', titleEn: 'Make Robot Angel the #1 Robotics IDE', icon: Rocket },
+  { title: 'Certificación AI Engineer AWS', titleEn: 'AWS AI Engineer Certification', icon: Brain },
+  { title: 'Campeón Robot Batalla 1L', titleEn: 'Robot Battle 1L Champion', icon: Award },
+  { title: 'Campeón de Hackathon', titleEn: 'Hackathon Champion', icon: Award },
+  { title: 'Terminar las 2 Ingenierías', titleEn: 'Complete Both Engineering Degrees', icon: BookOpen },
+  { title: 'Certificación CSWP SolidWorks', titleEn: 'CSWP SolidWorks Certification', icon: Cog },
+  { title: 'Máster en Inteligencia Artificial', titleEn: 'Master\'s in Artificial Intelligence', icon: Brain },
+  { title: '10,000 Seguidores Corto Circuito', titleEn: '10,000 Followers for Short Circuit', icon: Target },
 ];
 
 const roboticsSkills = [
@@ -53,7 +82,7 @@ const roboticsSkills = [
 ];
 
 const SkillsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { ref, isInView } = useInView();
 
   return (
@@ -89,7 +118,7 @@ const SkillsSection = () => {
                         <div className="p-3 rounded-full bg-primary/10">
                           <goal.icon className="h-6 w-6 text-primary" />
                         </div>
-                        <span className="font-medium">{goal.title}</span>
+                        <span className="font-medium">{language === 'en' ? goal.titleEn : goal.title}</span>
                       </CardContent>
                     </Card>
                   </CarouselItem>
@@ -148,7 +177,38 @@ const SkillsSection = () => {
                       <item.icon className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                  <span className="text-sm font-medium">{item.name}</span>
+                  <span className="text-sm font-medium">{language === 'en' ? item.name : item.nameEs}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="mb-20">
+          <h3
+            className={`text-2xl font-bold mb-8 text-center ${
+              isInView ? 'animate-fade-in' : 'opacity-0'
+            }`}
+            style={{ animationDelay: '0.4s' }}
+          >
+            <Wrench className="inline-block mr-2 h-6 w-6 text-primary" />
+            Skills
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {skills.map((skill, index) => (
+              <Card
+                key={skill.name}
+                className={`group hover:shadow-lg transition-all duration-300 border-0 hover:scale-105 ${
+                  isInView ? 'animate-scale-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${0.5 + index * 0.05}s` }}
+              >
+                <CardContent className="p-4 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <skill.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">{language === 'en' ? skill.name : skill.nameEs}</span>
                 </CardContent>
               </Card>
             ))}
