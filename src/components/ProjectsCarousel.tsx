@@ -10,7 +10,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ChevronRight, ChevronsRight } from 'lucide-react';
 import nasaImg from '@/assets/proyectos/Analisis de datos de la NASA.png';
 import visionImg from '@/assets/proyectos/Automatización con vision artifical.jpeg';
 import brazoImg from '@/assets/proyectos/Brazo robotico con Vision Artificial.jpeg';
@@ -67,8 +67,11 @@ const ProjectsCarousel = () => {
   const { t, language } = useLanguage();
   const { ref, isInView } = useInView();
 
+  // Duplicate projects for infinite loop
+  const loopedProjects = [...projects, ...projects];
+
   return (
-    <section id="all-projects" ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
+    <section id="all-projects" ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -79,7 +82,7 @@ const ProjectsCarousel = () => {
             {t('projects.title')}
           </h2>
           <p
-            className={`text-lg text-gray-600 ${
+            className={`text-lg text-muted-foreground ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -92,11 +95,23 @@ const ProjectsCarousel = () => {
           className={`max-w-6xl mx-auto ${isInView ? 'animate-slide-up' : 'opacity-0'}`}
           style={{ animationDelay: '0.3s' }}
         >
-          <Carousel opts={{ align: 'start', loop: true }}>
+          {/* Mobile swipe indicator */}
+          <div className="md:hidden flex items-center justify-center gap-2 mb-4 text-primary animate-pulse">
+            <ChevronsRight className="h-5 w-5" />
+            <span className="text-sm font-semibold">{t('carousel.swipe')}</span>
+            <ChevronsRight className="h-5 w-5" />
+          </div>
+          <Carousel 
+            opts={{ 
+              align: 'start', 
+              loop: true,
+            }}
+            className="w-full"
+          >
             <CarouselContent className="-ml-4">
-              {projects.map((project) => (
-                <CarouselItem key={project.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <Card className="group overflow-hidden border-0 transition-all duration-500">
+              {loopedProjects.map((project, index) => (
+                <CarouselItem key={`${project.id}-${index}`} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <Card className="group overflow-hidden border-2 border-black shadow-lg hover:shadow-xl transition-all duration-500">
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={project.image}
@@ -132,7 +147,7 @@ const ProjectsCarousel = () => {
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {language === 'en' ? project.title : project.titleEs}
                       </h3>
-                      <p className="text-white/80 text-sm mb-4 leading-relaxed">
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                         {language === 'en' ? project.description : project.descriptionEs}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -147,8 +162,8 @@ const ProjectsCarousel = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-red-600 text-white hover:bg-red-700 border-0" />
-            <CarouselNext className="hidden md:flex -right-12 bg-red-600 text-white hover:bg-red-700 border-0" />
+            <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90 border-0" />
+            <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90 border-0" />
           </Carousel>
         </div>
       </div>

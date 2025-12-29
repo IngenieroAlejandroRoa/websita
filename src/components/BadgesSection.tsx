@@ -33,7 +33,7 @@ const BadgesSection = () => {
             href="https://www.credly.com/users/alejandro-roa-aparicio"
             target="_blank"
             rel="noopener noreferrer"
-            className={`block p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl group ${
+            className={`block p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-black hover:border-red-600 transition-all duration-300 hover:shadow-2xl group ${
               isInView ? 'animate-scale-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.3s' }}

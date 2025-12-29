@@ -33,6 +33,7 @@ import {
   TrendingUp,
   Crosshair,
   Eye,
+  ChevronsRight,
 } from 'lucide-react';
 
 const learningItems = [
@@ -109,12 +110,18 @@ const SkillsSection = () => {
             {t('skills.goals')}
           </h3>
           <div className="max-w-4xl mx-auto">
+            {/* Mobile swipe indicator */}
+            <div className="md:hidden flex items-center justify-center gap-2 mb-4 text-red-600 animate-pulse">
+              <ChevronsRight className="h-5 w-5" />
+              <span className="text-sm font-semibold">{t('carousel.swipe')}</span>
+              <ChevronsRight className="h-5 w-5" />
+            </div>
             <Carousel opts={{ align: 'start', loop: true }}>
               <CarouselContent className="-ml-4">
                 {upcomingGoals.map((goal, index) => (
                   <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/50">
-                      <CardContent className="p-6 flex items-center gap-4">
+                    <Card className="border-2 border-black shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/50">
+                      <CardContent className="p-6 flex items-center gap-4 text-black">
                         <div className="p-3 rounded-full bg-primary/10">
                           <goal.icon className="h-6 w-6 text-primary" />
                         </div>
@@ -145,12 +152,12 @@ const SkillsSection = () => {
             {learningItems.map((item, index) => (
               <Card
                 key={item.name}
-                className={`group hover:shadow-lg transition-all duration-300 border-0 ${
+                className={`group shadow-md hover:shadow-xl transition-all duration-300 border-2 border-black ${
                   isInView ? 'animate-scale-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                <CardContent className="p-4 text-center">
+                <CardContent className="p-4 text-center text-black">
                   <div className="relative mx-auto w-16 h-16 mb-3">
                     <svg className="w-16 h-16 transform -rotate-90">
                       <circle
@@ -160,7 +167,7 @@ const SkillsSection = () => {
                         stroke="currentColor"
                         strokeWidth="4"
                         fill="none"
-                        className="text-muted/30"
+                        className="text-gray-300"
                       />
                       <circle
                         cx="32"
@@ -199,12 +206,12 @@ const SkillsSection = () => {
             {skills.map((skill, index) => (
               <Card
                 key={skill.name}
-                className={`group hover:shadow-lg transition-all duration-300 border-0 hover:scale-105 ${
+                className={`group shadow-md hover:shadow-xl transition-all duration-300 border-2 border-black hover:scale-105 ${
                   isInView ? 'animate-scale-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${0.5 + index * 0.05}s` }}
               >
-                <CardContent className="p-4 flex items-center gap-3">
+                <CardContent className="p-4 flex items-center gap-3 text-black">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <skill.icon className="h-5 w-5 text-primary" />
                   </div>

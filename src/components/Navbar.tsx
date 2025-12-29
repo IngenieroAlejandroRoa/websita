@@ -20,12 +20,13 @@ const Navbar = () => {
   const navLinks = [
     { href: '#home', label: t('nav.home') },
     { href: '#projects', label: t('nav.projects') },
-    { href: '#about', label: t('nav.about') },
     { href: '#experience', label: t('nav.experience') },
     { href: '#competitions', label: t('nav.competitions') },
+    { href: '#all-projects', label: t('nav.allprojects') },
     { href: '#skills', label: t('nav.skills') },
     { href: '#badges', label: t('nav.badges') },
-    { href: '#all-projects', label: t('nav.allprojects') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#chatbot', label: t('nav.chatbot') },
     { href: '#contact', label: t('nav.contact') },
   ];
 
@@ -39,14 +40,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-lg transition-all duration-300"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-16">
           <a
             href="#home"
             onClick={(e) => {

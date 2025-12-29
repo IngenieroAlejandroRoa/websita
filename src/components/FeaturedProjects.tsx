@@ -56,7 +56,7 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className={`group overflow-hidden border-0 transition-all duration-500 ${
+              className={`group overflow-hidden border-2 border-black shadow-lg hover:shadow-xl transition-all duration-500 ${
                 isInView ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${0.3 + index * 0.2}s` }}
@@ -78,7 +78,7 @@ const FeaturedProjects = () => {
                   {project.subtitle}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold mb-3">{project.title}</h3>
-                <p className="text-white/80 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   {project.description}
                 </p>
                 <Button

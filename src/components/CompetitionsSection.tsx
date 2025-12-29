@@ -35,7 +35,7 @@ const CompetitionsSection = () => {
   ];
 
   return (
-    <section id="competitions" ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
+    <section id="competitions" ref={ref} className="py-20 md:py-32 bg-black text-white relative overflow-hidden" data-aos="fade-up">
       <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4">
@@ -54,10 +54,10 @@ const CompetitionsSection = () => {
             </div>
 
             <div>
-              <h2 className={`text-3xl md:text-5xl font-bold mb-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
+              <h2 className={`text-3xl md:text-5xl font-bold mb-6 text-white ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
                 {t('competitions.title')}
               </h2>
-              <p className={`text-lg text-muted-foreground leading-relaxed mb-8 ${isInView ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+              <p className={`text-lg text-white/80 leading-relaxed mb-8 ${isInView ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                 {t('competitions.description')}
               </p>
               
@@ -65,11 +65,11 @@ const CompetitionsSection = () => {
                 {highlights.map((item, index) => (
                   <div
                     key={`${item.label}-${index}`}
-                    className={`p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg flex flex-col items-center justify-center text-center ${isInView ? 'animate-scale-in' : 'opacity-0'}`}
+                    className={`p-4 rounded-lg bg-card border border-border hover:border-red-600/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center text-center ${isInView ? 'animate-scale-in' : 'opacity-0'}`}
                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   >
-                    <item.icon className="h-8 w-8 text-primary mb-2" />
-                    <span className="font-medium text-xs md:text-sm">{language === 'en' ? item.labelEn : item.label}</span>
+                    <item.icon className="h-8 w-8 text-red-600 mb-2" />
+                    <span className="font-bold text-xs md:text-sm text-black">{language === 'en' ? item.labelEn : item.label}</span>
                   </div>
                 ))}
               </div>

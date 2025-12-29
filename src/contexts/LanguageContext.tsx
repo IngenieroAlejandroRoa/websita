@@ -20,6 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'Skills',
     'nav.badges': 'Badges',
     'nav.allprojects': 'Projects',
+    'nav.chatbot': 'Chat',
     'nav.contact': 'Contact',
     
     // Hero
@@ -29,6 +30,9 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title2': 'Software Engineer',
     'hero.cta': 'View My Work',
     'hero.contact': 'Contact Me',
+    
+    // Carousel
+    'carousel.swipe': 'Swipe to see more',
     
     // Featured Projects
     'featured.title': 'Featured Projects',
@@ -124,6 +128,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'Habilidades',
     'nav.badges': 'Insignias',
     'nav.allprojects': 'Proyectos',
+    'nav.chatbot': 'Chat',
     'nav.contact': 'Contacto',
     
     // Hero
@@ -133,6 +138,9 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title2': 'Ingeniero de Software',
     'hero.cta': 'Ver Mi Trabajo',
     'hero.contact': 'Contáctame',
+    
+    // Carousel
+    'carousel.swipe': 'Desliza para ver más',
     
     // Featured Projects
     'featured.title': 'Proyectos Destacados',

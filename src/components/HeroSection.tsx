@@ -44,7 +44,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center gap-8 lg:gap-16 min-h-screen">
           {/* Profile Image - Left side */}
-          <div className="relative animate-scale-in lg:mb-0 mb-8 lg:order-1 order-2">
+          <div className="relative animate-scale-in lg:mb-0 mb-8 lg:order-1 order-1">
             <img 
               src={profilePhoto} 
               alt="Alejandro Roa Aparicio" 
@@ -53,7 +53,7 @@ const HeroSection = () => {
           </div>
 
           {/* Content - Right side */}
-          <div className="text-center lg:text-center lg:mb-0 mb-8 lg:self-center lg:order-2 order-1">
+          <div className="text-center lg:text-center lg:mb-0 mb-8 lg:self-center lg:order-2 order-2">
             {/* Translucent backdrop for text */}
             <div className="bg-gradient-to-r from-gray-900/80 via-gray-800/70 to-transparent backdrop-blur-sm rounded-2xl p-8 lg:p-10">
               <p className="text-lg md:text-xl text-white font-bold mb-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>

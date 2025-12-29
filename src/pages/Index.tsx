@@ -8,6 +8,7 @@ import CompetitionsSection from '@/components/CompetitionsSection';
 import SkillsSection from '@/components/SkillsSection';
 import BadgesSection from '@/components/BadgesSection';
 import ProjectsCarousel from '@/components/ProjectsCarousel';
+import ChatbotSection from '@/components/ChatbotSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -19,12 +20,13 @@ const Index = () => {
         <main>
           <HeroSection />
           <FeaturedProjects />
-          <AboutSection />
           <ExperienceCarousel />
           <CompetitionsSection />
+          <ProjectsCarousel />
           <SkillsSection />
           <BadgesSection />
-          <ProjectsCarousel />
+          <AboutSection />
+          <ChatbotSection />
           <ContactSection />
         </main>
         <Footer />

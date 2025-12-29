@@ -42,21 +42,21 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
+    <section id="contact" ref={ref} className="py-20 md:py-32 bg-black text-white relative overflow-hidden" data-aos="fade-up">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2
-            className={`text-3xl md:text-5xl font-bold mb-4 ${
+            className={`text-3xl md:text-5xl font-bold mb-4 text-white ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
           >
             {t('contact.title')}
           </h2>
           <p
-            className={`text-lg text-muted-foreground ${
+            className={`text-lg text-white/80 ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -68,38 +68,38 @@ const ContactSection = () => {
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Services Card */}
           <Card
-            className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in' : 'opacity-0'}`}
+            className={`border-2 border-black shadow-xl bg-white ${isInView ? 'animate-fade-in' : 'opacity-0'}`}
             style={{ animationDelay: '0.3s' }}
           >
             <CardContent className="p-6 md:p-8">
               <h3 className="text-2xl font-semibold mb-6 text-black">{t('contact.services')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service1')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service2')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service3')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service4')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service5')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service6')}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-primary text-xl">•</span>
+                <div className="flex items-center gap-2 text-black">
+                  <span className="text-red-600 text-xl">•</span>
                   <span>{t('contact.service7')}</span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const ContactSection = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Form */}
             <Card
-              className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
+              className={`border-2 border-black shadow-xl bg-white ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
               style={{ animationDelay: '0.4s' }}
             >
               <CardContent className="p-8">
@@ -124,7 +124,7 @@ const ContactSection = () => {
                       name="name"
                       required
                       placeholder="Alejandro Roa"
-                      className="bg-gray-50 border-gray-200 text-black"
+                      className="bg-gray-50 border-gray-200 text-black placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ const ContactSection = () => {
                       type="email"
                       required
                       placeholder="Alejo@example.com"
-                      className="bg-gray-50 border-gray-200 text-black"
+                      className="bg-gray-50 border-gray-200 text-black placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -150,7 +150,7 @@ const ContactSection = () => {
                       required
                       rows={5}
                       placeholder="Tell me about your project..."
-                      className="bg-gray-50 border-gray-200 text-black resize-none"
+                      className="bg-gray-50 border-gray-200 text-black placeholder:text-gray-400 resize-none"
                     />
                   </div>
                   <Button
@@ -186,17 +186,17 @@ const ContactSection = () => {
                   key={info.label}
                   className="flex items-center gap-4 p-4 rounded-lg bg-white hover:bg-gray-50 transition-colors border border-gray-200"
                 >
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <info.icon className="h-6 w-6 text-primary" />
+                  <div className="p-3 rounded-full bg-red-600/10">
+                    <info.icon className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">{info.label}</p>
                     {info.label === 'Email' ? (
                       <div className="space-y-1">
-                        <a href="mailto:alejoroaaparicio@gmail.com" className="font-medium text-black hover:text-primary transition-colors block">
+                        <a href="mailto:alejoroaaparicio@gmail.com" className="font-medium text-black hover:text-red-600 transition-colors block">
                           alejoroaaparicio@gmail.com
                         </a>
-                        <a href="mailto:aroaapa33136@universidadean.edu.co" className="font-medium text-sm text-gray-600 hover:text-primary transition-colors block">
+                        <a href="mailto:aroaapa33136@universidadean.edu.co" className="font-medium text-sm text-gray-600 hover:text-red-600 transition-colors block">
                           aroaapa33136@universidadean.edu.co
                         </a>
                       </div>
@@ -209,7 +209,7 @@ const ContactSection = () => {
 
               {/* Social Links */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-black">{t('contact.follow')}</h3>
+                <h3 className="text-lg font-semibold mb-4 text-white">{t('contact.follow')}</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social) => (
                     <a
@@ -217,7 +217,7 @@ const ContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-4 rounded-full bg-card hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group border border-border"
+                      className="p-4 rounded-full bg-white hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg group border border-gray-200"
                       aria-label={social.label}
                     >
                       <social.icon className="h-6 w-6 text-black group-hover:text-white transition-transform group-hover:scale-110" />
