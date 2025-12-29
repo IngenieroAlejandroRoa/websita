@@ -21,7 +21,7 @@ FROM nginx:alpine
 # Copy built files from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Expose port 80 (will be mapped to 8080)
+# Expose port 80
 EXPOSE 80
 
 # Start nginx
