@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import AboutSection from '@/components/AboutSection';
 import ExperienceCarousel from '@/components/ExperienceCarousel';
+import CompetitionsSection from '@/components/CompetitionsSection';
 import SkillsSection from '@/components/SkillsSection';
 import BadgesSection from '@/components/BadgesSection';
 import ProjectsCarousel from '@/components/ProjectsCarousel';
@@ -20,6 +21,7 @@ const Index = () => {
           <FeaturedProjects />
           <AboutSection />
           <ExperienceCarousel />
+          <CompetitionsSection />
           <SkillsSection />
           <BadgesSection />
           <ProjectsCarousel />

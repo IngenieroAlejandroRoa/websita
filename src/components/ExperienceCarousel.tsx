@@ -9,12 +9,23 @@ import {
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Calendar } from 'lucide-react';
+import researchImg from '@/assets/work experience/research.png';
+import juniorImg from '@/assets/work experience/junior.jpg';
+import teacherImg from '@/assets/work experience/teacher.png';
+import circuitsImg from '@/assets/work experience/circuits.jpeg';
+import electronicImg from '@/assets/work experience/electronic.jpeg';
 
 const ExperienceCarousel = () => {
   const { t } = useLanguage();
   const { ref, isInView } = useInView();
 
-  const experiences = [0, 1, 2, 3, 4];
+  const experiences = [
+    { id: 0, image: researchImg },
+    { id: 1, image: juniorImg },
+    { id: 2, image: teacherImg },
+    { id: 3, image: circuitsImg },
+    { id: 4, image: electronicImg },
+  ];
 
   return (
     <section id="experience" ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
@@ -42,25 +53,33 @@ const ExperienceCarousel = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {experiences.map((id) => (
-                <CarouselItem key={id} className="pl-4 md:basis-1/2 lg:basis-1/2">
-                  <Card className="h-full border-0">
+              {experiences.map((exp) => (
+                <CarouselItem key={exp.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                  <Card className="h-full border-0 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={exp.image}
+                        alt={t(`experience.${exp.id}.title`)}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
                     <CardContent className="p-6 md:p-8 text-black">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                           <Briefcase className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-1">{t(`experience.${id}.title`)}</h3>
-                          <p className="text-primary font-medium">{t(`experience.${id}.company`)}</p>
+                          <h3 className="text-xl font-bold mb-1">{t(`experience.${exp.id}.title`)}</h3>
+                          <p className="text-primary font-medium">{t(`experience.${exp.id}.company`)}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600 mb-4">
                         <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{t(`experience.${id}.period`)}</span>
+                        <span className="text-sm">{t(`experience.${exp.id}.period`)}</span>
                       </div>
                       <p className="text-gray-600 leading-relaxed">
-                        {t(`experience.${id}.description`)}
+                        {t(`experience.${exp.id}.description`)}
                       </p>
                     </CardContent>
                   </Card>

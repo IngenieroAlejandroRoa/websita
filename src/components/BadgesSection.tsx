@@ -7,7 +7,7 @@ const BadgesSection = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="badges" ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
+    <section id="badges" ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -18,7 +18,7 @@ const BadgesSection = () => {
             {t('badges.title')}
           </h2>
           <p
-            className={`text-lg text-white ${
+            className={`text-lg text-muted-foreground ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -43,10 +43,10 @@ const BadgesSection = () => {
                 <Award className="h-12 w-12 text-primary group-hover:text-white" />
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold text-black group-hover:text-primary transition-colors">
                   {t('badges.credlyTitle')}
                 </h3>
-                <p className="text-gray-300">{t('badges.credlyDesc')}</p>
+                <p className="text-muted-foreground">{t('badges.credlyDesc')}</p>
               </div>
             </div>
             

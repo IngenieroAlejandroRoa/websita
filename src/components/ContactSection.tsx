@@ -42,7 +42,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 md:py-32 bg-black text-white relative overflow-hidden" data-aos="fade-up">
+    <section id="contact" ref={ref} className="py-20 md:py-32 bg-white text-black relative overflow-hidden" data-aos="fade-up">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
       
@@ -56,7 +56,7 @@ const ContactSection = () => {
             {t('contact.title')}
           </h2>
           <p
-            className={`text-lg text-gray-300 ${
+            className={`text-lg text-muted-foreground ${
               isInView ? 'animate-fade-in' : 'opacity-0'
             }`}
             style={{ animationDelay: '0.2s' }}
@@ -65,81 +65,122 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+        <div className="max-w-5xl mx-auto space-y-8">
+          {/* Services Card */}
           <Card
-            className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
+            className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in' : 'opacity-0'}`}
             style={{ animationDelay: '0.3s' }}
           >
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-black">
-                    {t('contact.name')}
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Alejandro Roa"
-                    className="bg-gray-50 border-gray-200 text-black"
-                  />
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-2xl font-semibold mb-6 text-black">{t('contact.services')}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service1')}</span>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-black">
-                    {t('contact.email')}
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="Alejo@example.com"
-                    className="bg-gray-50 border-gray-200 text-black"
-                  />
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service2')}</span>
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-black">
-                    {t('contact.message')}
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    placeholder="Tell me about your project..."
-                    className="bg-gray-50 border-gray-200 text-black resize-none"
-                  />
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service3')}</span>
                 </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <div className="h-4 w-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                      Sending...
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <Send className="h-4 w-4" />
-                      {t('contact.send')}
-                    </span>
-                  )}
-                </Button>
-              </form>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service4')}</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service5')}</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service6')}</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <span className="text-primary text-xl">•</span>
+                  <span>{t('contact.service7')}</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
-          {/* Contact Info */}
-          <div
-            className={`space-y-8 ${isInView ? 'animate-fade-in-right' : 'opacity-0'}`}
-            style={{ animationDelay: '0.4s' }}
-          >
-            {/* Contact Details */}
-            <div className="space-y-6">
+          {/* Contact Form and Info */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <Card
+              className={`border-0 shadow-xl bg-white ${isInView ? 'animate-fade-in-left' : 'opacity-0'}`}
+              style={{ animationDelay: '0.4s' }}
+            >
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-black">
+                      {t('contact.name')}
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Alejandro Roa"
+                      className="bg-gray-50 border-gray-200 text-black"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-black">
+                      {t('contact.email')}
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Alejo@example.com"
+                      className="bg-gray-50 border-gray-200 text-black"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-black">
+                      {t('contact.message')}
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="Tell me about your project..."
+                      className="bg-gray-50 border-gray-200 text-black resize-none"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-primary hover:bg-primary/90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <div className="h-4 w-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                        Sending...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <Send className="h-4 w-4" />
+                        {t('contact.send')}
+                      </span>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <div
+              className={`space-y-6 ${isInView ? 'animate-fade-in-right' : 'opacity-0'}`}
+              style={{ animationDelay: '0.5s' }}
+            >
+              {/* Contact Details */}
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
@@ -165,24 +206,24 @@ const ContactSection = () => {
                   </div>
                 </div>
               ))}
-            </div>
 
-            {/* Social Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">{t('contact.follow')}</h3>
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-white hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-6 w-6 text-black group-hover:text-white transition-transform group-hover:scale-110" />
-                  </a>
-                ))}
+              {/* Social Links */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-black">{t('contact.follow')}</h3>
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 rounded-full bg-card hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group border border-border"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="h-6 w-6 text-black group-hover:text-white transition-transform group-hover:scale-110" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

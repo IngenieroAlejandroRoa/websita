@@ -2,7 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Lightbulb, Bot } from 'lucide-react';
-import shortCircuitImg from '@/assets/short-circuit-project.jpg';
+import shortCircuitImg from '@/assets/logo insta.jpg';
 import angelRobotImg from '@/assets/angel-robot-project.jpg';
 import { useInView } from '@/hooks/useInView';
 

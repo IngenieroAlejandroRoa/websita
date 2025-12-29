@@ -65,8 +65,12 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.4.period': '2025',
     'experience.4.description': 'Provided tutoring and collaborated in directing class laboratories for the Electronics subject.',
     
+    // Competitions
+    'competitions.title': 'Competitions & Hackathons',
+    'competitions.description': 'Throughout my career, I have participated in various competitions and hackathons that have challenged my technical skills and teamwork abilities. These experiences have been fundamental in my professional development, allowing me to apply my knowledge in real-world scenarios and learn from other talented professionals.',
+    
     // Skills
-    'skills.title': 'Skills & Expertise',
+    'skills.title': 'Goals & Skills',
     'skills.learning': 'Currently Learning',
     'skills.goals': 'Upcoming Goals',
     'skills.robotics': 'Robotics & Programming',
@@ -85,13 +89,24 @@ const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Get In Touch',
     'contact.subtitle': 'Let\'s build something amazing together',
+    'contact.services': 'Services I Offer',
+    'contact.service1': '3D Design',
+    'contact.service2': 'Web and Mobile Development',
+    'contact.service3': 'Circuit Design',
+    'contact.service4': 'Prototyping',
+    'contact.service5': 'Consulting',
+    'contact.service6': 'Robotics Consulting',
+    'contact.service7': 'Engineering Tutoring',
     'contact.name': 'Name',
     'contact.email': 'Email',
     'contact.message': 'Message',
     'contact.send': 'Send Message',
     'contact.success': 'Message sent successfully!',
+    'contact.follow': 'Follow Me',
     
     // Footer
+    'footer.sourceCode': 'Website source code',
+    'footer.lastUpdate': 'Last updated December 2025 by',
     'footer.rights': 'All rights reserved.',
   },
   es: {
@@ -150,8 +165,12 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.4.period': '2025',
     'experience.4.description': 'Impartí monitorías y colaboré en la dirección de laboratorios de clase para la materia de Electrónica.',
     
+    // Competencias
+    'competitions.title': 'Competencias y Hackatones',
+    'competitions.description': 'A lo largo de mi carrera, he participado en diversas competencias y hackatones que han desafiado mis habilidades técnicas y capacidad de trabajo en equipo. Estas experiencias han sido fundamentales en mi desarrollo profesional, permitiéndome aplicar mis conocimientos en escenarios del mundo real y aprender de otros profesionales talentosos.',
+    
     // Habilidades
-    'skills.title': 'Habilidades y Experiencia',
+    'skills.title': 'Metas y Habilidades',
     'skills.learning': 'Aprendiendo Actualmente',
     'skills.goals': 'Próximas Metas',
     'skills.robotics': 'Robótica y Programación',
@@ -170,13 +189,24 @@ const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Contáctame',
     'contact.subtitle': 'Construyamos algo increíble juntos',
+    'contact.services': 'Servicios que Ofrezco',
+    'contact.service1': 'Diseño 3D',
+    'contact.service2': 'Desarrollo Web y Móvil',
+    'contact.service3': 'Diseño de Circuitos',
+    'contact.service4': 'Prototipado',
+    'contact.service5': 'Consultorías',
+    'contact.service6': 'Asesoría con Robots',
+    'contact.service7': 'Tutorías de Ingeniería',
     'contact.name': 'Nombre',
     'contact.email': 'Correo',
     'contact.message': 'Mensaje',
     'contact.send': 'Enviar Mensaje',
     'contact.success': '¡Mensaje enviado exitosamente!',
+    'contact.follow': 'Sígueme',
     
     // Footer
+    'footer.sourceCode': 'Código fuente de la web',
+    'footer.lastUpdate': 'Última actualización diciembre 2025 por',
     'footer.rights': 'Todos los derechos reservados.',
   }
 };

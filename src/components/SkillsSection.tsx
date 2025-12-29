@@ -57,7 +57,7 @@ const SkillsSection = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="skills" ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
+    <section id="skills" ref={ref} className="py-20 md:py-32 bg-black text-white" data-aos="fade-up">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -67,6 +67,38 @@ const SkillsSection = () => {
           >
             {t('skills.title')}
           </h2>
+        </div>
+
+        {/* Upcoming Goals Carousel */}
+        <div className="mb-20">
+          <h3
+            className={`text-2xl font-bold mb-8 text-center ${
+              isInView ? 'animate-fade-in' : 'opacity-0'
+            }`}
+          >
+            <Target className="inline-block mr-2 h-6 w-6 text-primary" />
+            {t('skills.goals')}
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <Carousel opts={{ align: 'start', loop: true }}>
+              <CarouselContent className="-ml-4">
+                {upcomingGoals.map((goal, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/50">
+                      <CardContent className="p-6 flex items-center gap-4">
+                        <div className="p-3 rounded-full bg-primary/10">
+                          <goal.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <span className="font-medium">{goal.title}</span>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90" />
+              <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90" />
+            </Carousel>
+          </div>
         </div>
 
         {/* Learning Grid */}
@@ -120,76 +152,6 @@ const SkillsSection = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-
-        {/* Upcoming Goals Carousel */}
-        <div className="mb-20">
-          <h3
-            className={`text-2xl font-bold mb-8 text-center ${
-              isInView ? 'animate-fade-in' : 'opacity-0'
-            }`}
-          >
-            <Target className="inline-block mr-2 h-6 w-6 text-primary" />
-            {t('skills.goals')}
-          </h3>
-          <div className="max-w-4xl mx-auto">
-            <Carousel opts={{ align: 'start', loop: true }}>
-              <CarouselContent className="-ml-4">
-                {upcomingGoals.map((goal, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/50">
-                      <CardContent className="p-6 flex items-center gap-4">
-                        <div className="p-3 rounded-full bg-primary/10">
-                          <goal.icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <span className="font-medium">{goal.title}</span>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90" />
-              <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90" />
-            </Carousel>
-          </div>
-        </div>
-
-        {/* Robotics & Programming Skills Carousel */}
-        <div className="mb-20">
-          <h3
-            className={`text-2xl font-bold mb-8 text-center ${
-              isInView ? 'animate-fade-in' : 'opacity-0'
-            }`}
-          >
-            <Cog className="inline-block mr-2 h-6 w-6 text-primary" />
-            {t('skills.robotics')}
-          </h3>
-          <div className="max-w-5xl mx-auto">
-            <Carousel opts={{ align: 'start', loop: true }}>
-              <CarouselContent className="-ml-4">
-                {roboticsSkills.map((skill, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <Card className="border-0 shadow-lg">
-                      <CardContent className="p-6">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">{skill.name}</span>
-                          <Badge variant="secondary">{skill.level}%</Badge>
-                        </div>
-                        <div className="h-2 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-500"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12 bg-primary text-white hover:bg-primary/90" />
-              <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90" />
-            </Carousel>
           </div>
         </div>
 

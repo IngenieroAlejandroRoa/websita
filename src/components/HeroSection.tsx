@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin } from 'lucide-react';
 import heroVideo from '@/assets/video3.mp4';
 import profilePhoto from '@/assets/me2.png';
 
@@ -107,12 +107,6 @@ const HeroSection = () => {
                   className="p-3 rounded-full bg-card hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="mailto:alejoroaaparicio@gmail.com"
-                  className="p-3 rounded-full bg-card hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>
