@@ -12,13 +12,13 @@ const ChatbotSection = () => {
   const content = {
     en: {
       title: "Chat with Me",
-      subtitle: "Ask me anything about my work, skills, or projects",
+      subtitle: "Hello, this is a trained chatbot to answer your questions about me, my skills, projects, work or contact information instantly",
       placeholder: "Type your message...",
       send: "Send"
     },
     es: {
       title: "Chatea Conmigo",
-      subtitle: "Pregúntame sobre mi trabajo, habilidades o proyectos",
+      subtitle: "Hola, este es un chatbot entrenado para responder tus dudas sobre mí, mis habilidades, proyectos, trabajo o información de contacto al instante",
       placeholder: "Escribe tu mensaje...",
       send: "Enviar"
     }

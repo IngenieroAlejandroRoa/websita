@@ -18,16 +18,41 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: t('contact.success'),
-      description: 'I will get back to you as soon as possible.',
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      toast({
+        title: t('contact.success'),
+        description: 'I will get back to you as soon as possible.',
+      });
+      
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -123,7 +148,7 @@ const ContactSection = () => {
                       id="name"
                       name="name"
                       required
-                      placeholder="Alejandro Roa"
+                      placeholder="Your Name"
                       className="bg-gray-50 border-gray-200 text-black placeholder:text-gray-400"
                     />
                   </div>
@@ -136,7 +161,7 @@ const ContactSection = () => {
                       name="email"
                       type="email"
                       required
-                      placeholder="Alejo@example.com"
+                      placeholder="Your_Email@example.com"
                       className="bg-gray-50 border-gray-200 text-black placeholder:text-gray-400"
                     />
                   </div>
