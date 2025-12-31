@@ -65,7 +65,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-red-600 hover:text-red-700 transition-colors font-bold relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-600 after:transition-all hover:after:w-full"
+                className="text-red-800 hover:text-red-900 transition-colors font-bold relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-red-800 after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>

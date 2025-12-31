@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -58,7 +58,6 @@ const ContactSection = () => {
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'alejoroaaparicio@gmail.com' },
     { icon: MapPin, label: 'Location', value: 'Bogotá, Colombia' },
-    { icon: Phone, label: 'Phone', value: '+57 321 468 5538' },
   ];
 
   const socialLinks = [

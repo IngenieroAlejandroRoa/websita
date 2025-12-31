@@ -67,8 +67,6 @@ const FeaturedProjects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-60`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                 <div className="absolute top-4 left-4 p-3 rounded-full bg-card/90 backdrop-blur-sm">
                   <project.icon className="h-6 w-6 text-primary" />
                 </div>

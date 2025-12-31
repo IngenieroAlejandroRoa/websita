@@ -9,13 +9,15 @@ import photo4 from '@/assets/about me/4.jpeg';
 import photo5 from '@/assets/about me/5.jpeg';
 import photo6 from '@/assets/about me/6.jpeg';
 import photo7 from '@/assets/about me/7.jpeg';
+import photo8 from '@/assets/about me/8.jpeg';
+import photo9 from '@/assets/about me/9.jpeg';
 
 const AboutSection = () => {
   const { t, language } = useLanguage();
   const { ref, isInView } = useInView();
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
-  const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7];
+  const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
   useEffect(() => {
     const interval = setInterval(() => {

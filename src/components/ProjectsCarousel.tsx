@@ -95,8 +95,8 @@ const ProjectsCarousel = () => {
           className={`max-w-6xl mx-auto ${isInView ? 'animate-slide-up' : 'opacity-0'}`}
           style={{ animationDelay: '0.3s' }}
         >
-          {/* Mobile swipe indicator */}
-          <div className="md:hidden flex items-center justify-center gap-2 mb-4 text-primary animate-pulse">
+          {/* Swipe indicator */}
+          <div className="flex items-center justify-center gap-2 mb-4 text-primary animate-pulse">
             <ChevronsRight className="h-5 w-5" />
             <span className="text-sm font-semibold">{t('carousel.swipe')}</span>
             <ChevronsRight className="h-5 w-5" />

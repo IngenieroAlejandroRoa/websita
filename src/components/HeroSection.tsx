@@ -1,8 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin } from 'lucide-react';
-import heroVideo from '@/assets/video3.mp4';
-import profilePhoto from '@/assets/me2.png';
+import heroVideo from '@/assets/fondo1.mp4';
+import profilePhoto from '@/assets/me3.png';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -42,13 +42,13 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center gap-8 lg:gap-16 min-h-screen">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center gap-0 lg:gap-16 min-h-screen">
           {/* Profile Image - Left side */}
-          <div className="relative animate-scale-in lg:mb-0 mb-8 lg:order-1 order-1">
+          <div className="relative animate-scale-in lg:mb-0 -mb-4 lg:order-1 order-1">
             <img 
               src={profilePhoto} 
               alt="Alejandro Roa Aparicio" 
-              className="w-96 h-96 md:w-[550px] md:h-[550px] lg:w-[750px] lg:h-[750px] object-contain drop-shadow-2xl"
+              className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] object-contain drop-shadow-2xl"
             />
           </div>
 
@@ -63,10 +63,10 @@ const HeroSection = () => {
                 <span className="text-white">{t('hero.name')}</span>
               </h1>
               <div className="space-y-2 mb-8">
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-red-600 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
+                <p className="text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-red-600 to-white bg-clip-text text-transparent animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
                   {t('hero.title1')}
                 </p>
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-red-600 animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
+                <p className="text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-red-600 to-white bg-clip-text text-transparent animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
                   {t('hero.title2')}
                 </p>
               </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
                   size="lg"
                   variant="outline"
                   onClick={scrollToContact}
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  className="border-primary text-black hover:bg-primary hover:text-primary-foreground"
                 >
                   {t('hero.contact')}
                 </Button>
