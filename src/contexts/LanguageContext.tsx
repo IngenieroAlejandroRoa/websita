@@ -37,12 +37,12 @@ const translations: Record<Language, Record<string, string>> = {
     // Featured Projects
     'featured.title': 'Featured Projects',
     'featured.subtitle': 'Innovative solutions that make a difference',
-    'featured.shortcircuit.title': 'Short Circuit',
+    'featured.shortcircuit.title': 'Corto Circuito - Science Outreach',
     'featured.shortcircuit.subtitle': 'Science Outreach',
-    'featured.shortcircuit.desc': 'Inspiring the next generation of engineers through hands-on electronics workshops and STEM education programs.',
-    'featured.angelrobot.title': 'Angel Robot',
+    'featured.shortcircuit.desc': 'This is a project where I share tips, explain concepts and projects, and seek to transmit my love for science and engineering with the aim of someday inspiring at least one person to find what they love and dedicate themselves to it, hoping that passion and flame is the same one I overflow with for this profession. I invite you to take a look at the reels, the links are below (I recommend Instagram).',
+    'featured.angelrobot.title': 'Robot Angel - Open Source Robotics IDE',
     'featured.angelrobot.subtitle': 'Open Source Robotics IDE',
-    'featured.angelrobot.desc': 'An intuitive development environment for programming and controlling robotic systems with visual and code-based interfaces.',
+    'featured.angelrobot.desc': 'Born as my systems engineering degree project but with a much more ambitious goal: to become the #1 robotics-dedicated IDE worldwide. It is a 100% open-source project to democratize robotics one dreamer at a time. I invite you to take a look at the code and contribute or learn about everything it offers on its page to start using it. The links are below.',
     'featured.learnmore': 'Learn More',
     
     // About
@@ -145,12 +145,12 @@ const translations: Record<Language, Record<string, string>> = {
     // Featured Projects
     'featured.title': 'Proyectos Destacados',
     'featured.subtitle': 'Soluciones innovadoras que marcan la diferencia',
-    'featured.shortcircuit.title': 'Short Circuit',
+    'featured.shortcircuit.title': 'Corto Circuito - Divulgación Científica',
     'featured.shortcircuit.subtitle': 'Divulgación Científica',
-    'featured.shortcircuit.desc': 'Inspirando a la próxima generación de ingenieros a través de talleres prácticos de electrónica y programas de educación STEM.',
-    'featured.angelrobot.title': 'Angel Robot',
+    'featured.shortcircuit.desc': 'Este es un proyecto en el que comparto tips, explico conceptos, proyectos y busco transmitir mi amor por la ciencia e ingeniería con el fin de algún día inspirar al menos a 1 persona a encontrar lo que ama y dedicarse a eso, esperando que esa pasión y esa llama sea la misma que desbordo por esta profesión. Te invito a darle un vistazo a los reels, aquí abajo están los links (Te recomiendo Instagram).',
+    'featured.angelrobot.title': 'Robot Angel - Open Source Robotics IDE',
     'featured.angelrobot.subtitle': 'IDE de Robótica Open Source',
-    'featured.angelrobot.desc': 'Un entorno de desarrollo intuitivo para programar y controlar sistemas robóticos con interfaces visuales y basadas en código.',
+    'featured.angelrobot.desc': 'Nace como mi proyecto de grado de ingeniería de sistemas pero con una meta mucho más ambiciosa, convertirse en el IDE dedicado a robótica #1 a nivel mundial. Es un proyecto 100% open source para democratizar la robótica 1 soñador a la vez. Te invito a echarle un ojo al código y contribuir o aprender sobre todo lo que ofrece en su página para empezar a usarlo, dejo los links aquí abajo.',
     'featured.learnmore': 'Saber Más',
     
     // Acerca de

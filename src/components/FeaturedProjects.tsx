@@ -1,14 +1,57 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Lightbulb, Bot } from 'lucide-react';
+import { ArrowRight, Lightbulb, Bot, Instagram, Youtube, Music, ExternalLink } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 import shortCircuitImg from '@/assets/logo insta.jpg';
 import angelRobotImg from '@/assets/angel-robot-project.jpg';
+import cortoCircuitoImg1 from '@/assets/corto circuito/1.jpg';
+import cortoCircuitoImg2 from '@/assets/corto circuito/2.jpeg';
+import cortoCircuitoImg4 from '@/assets/corto circuito/4.jpeg';
+import cortoCircuitoImg5 from '@/assets/corto circuito/5.jpeg';
+import robotAngelImg1 from '@/assets/robot angel/1.jpg';
+import robotAngelImg2 from '@/assets/robot angel/2.png';
+import robotAngelImg3 from '@/assets/robot angel/3.png';
+import robotAngelImg4 from '@/assets/robot angel/4.png';
 import { useInView } from '@/hooks/useInView';
 
 const FeaturedProjects = () => {
   const { t } = useLanguage();
   const { ref, isInView } = useInView();
+  
+  const cortoCircuitoImages = [
+    cortoCircuitoImg1,
+    cortoCircuitoImg2,
+    cortoCircuitoImg4,
+    cortoCircuitoImg5,
+  ];
+  
+  const robotAngelImages = [
+    robotAngelImg1,
+    robotAngelImg2,
+    robotAngelImg3,
+    robotAngelImg4,
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentRobotImageIndex, setCurrentRobotImageIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % cortoCircuitoImages.length);
+    }, 1000); // Cambia cada 1 segundo
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRobotImageIndex((prevIndex) => (prevIndex + 1) % robotAngelImages.length);
+    }, 1000); // Cambia cada 1 segundo
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const projects = [
     {
@@ -16,18 +59,26 @@ const FeaturedProjects = () => {
       title: t('featured.shortcircuit.title'),
       subtitle: t('featured.shortcircuit.subtitle'),
       description: t('featured.shortcircuit.desc'),
-      image: shortCircuitImg,
+      images: cortoCircuitoImages,
       icon: Lightbulb,
       color: 'from-yellow-500/20 to-orange-500/20',
+      social: [
+        { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/corto.circuitx/' },
+        { name: 'YouTube', icon: Youtube, url: 'https://www.youtube.com/@corto.circuitx' },
+        { name: 'TikTok', icon: Music, url: 'https://www.tiktok.com/@corto.circuito.tiktok' },
+        { name: 'GitHub', icon: FaGithub, url: 'https://github.com/CortoCircuitoProjects' },
+      ],
     },
     {
       id: 'angelrobot',
       title: t('featured.angelrobot.title'),
       subtitle: t('featured.angelrobot.subtitle'),
       description: t('featured.angelrobot.desc'),
-      image: angelRobotImg,
+      images: robotAngelImages,
       icon: Bot,
       color: 'from-blue-500/20 to-purple-500/20',
+      learnMoreUrl: 'https://ingenieroalejandroroa.github.io/Robot_Angel/',
+      githubUrl: 'https://github.com/IngenieroAlejandroRoa/Robot_Angel',
     },
   ];
 
@@ -61,9 +112,15 @@ const FeaturedProjects = () => {
               }`}
               style={{ animationDelay: `${0.3 + index * 0.2}s` }}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={
+                    project.id === 'shortcircuit' 
+                      ? project.images[currentImageIndex]
+                      : project.id === 'angelrobot'
+                      ? project.images[currentRobotImageIndex]
+                      : project.image
+                  }
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -79,13 +136,55 @@ const FeaturedProjects = () => {
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   {project.description}
                 </p>
-                <Button
-                  variant="ghost"
-                  className="group/btn text-primary hover:text-primary hover:bg-primary/10 p-0"
-                >
-                  {t('featured.learnmore')}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                </Button>
+                {project.social ? (
+                  <div className="flex gap-3">
+                    {project.social.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+                        aria-label={social.name}
+                      >
+                        <social.icon className="h-5 w-5 text-primary" />
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex gap-3 items-center">
+                    <Button
+                      variant="ghost"
+                      className="group/btn text-primary hover:text-primary hover:bg-primary/10 p-0"
+                      asChild
+                    >
+                      <a href={project.learnMoreUrl} target="_blank" rel="noopener noreferrer">
+                        {t('featured.learnmore')}
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </a>
+                    </Button>
+                    <a
+                      href={project.learnMoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+                      aria-label="Website"
+                    >
+                      <ExternalLink className="h-5 w-5 text-primary" />
+                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <FaGithub className="h-5 w-5 text-primary" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
