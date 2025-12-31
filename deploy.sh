@@ -4,18 +4,16 @@
 
 echo "🚀 Desplegando aplicación..."
 
-# 1. Detener contenedores existentes
-echo "📦 Deteniendo contenedores existentes..."
-docker compose down
-
-# 2. Cargar variables de entorno del backend
-if [ -f .env.backend ]; then
-    export $(cat .env.backend | grep -v '^#' | xargs)
-    echo "✅ Variables de entorno cargadas"
-else
+# 1. Verificar que existe .env.backend
+if [ ! -f .env.backend ]; then
     echo "❌ Error: .env.backend no encontrado"
+    echo "📝 Crea el archivo .env.backend con las credenciales SMTP"
     exit 1
 fi
+
+# 2. Detener contenedores existentes
+echo "📦 Deteniendo contenedores existentes..."
+docker compose down
 
 # 3. Construir imágenes
 echo "🔨 Construyendo imágenes Docker..."

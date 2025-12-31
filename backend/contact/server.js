@@ -9,6 +9,9 @@ dotenv.config();
 
 const app = express();
 
+// 0) Confiar en proxy (nginx)
+app.set('trust proxy', 1);
+
 // 1) Seguridad HTTP básica
 app.use(helmet());
 

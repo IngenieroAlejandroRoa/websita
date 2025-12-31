@@ -7,7 +7,19 @@
 
 ## 🚀 Despliegue en Producción
 
-### Opción 1: Script Automático (Recomendado)
+### Paso 1: Preparar el servidor
+
+```bash
+# En el servidor, verifica que exista .env.backend
+cd /websita
+ls -la .env.backend
+
+# Si NO existe, créalo desde el ejemplo
+cp .env.backend.example .env.backend
+nano .env.backend  # Edita con tus credenciales SMTP reales
+```
+
+### Paso 2: Deployment Automático
 
 ```bash
 ./deploy.sh
