@@ -1,7 +1,15 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import { useState, useEffect } from 'react';
-import { Trophy, Award, Medal, Target, Zap, Code, Rocket, Users, Crown, Star } from 'lucide-react';
+import { Trophy, Award, Medal, Target, Zap, Code, Rocket, Users, Crown, Star, ChevronsRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { Card, CardContent } from '@/components/ui/card';
 import photo1 from '@/assets/competencias/1.jpeg';
 import photo2 from '@/assets/competencias/2.jpeg';
 import photo3 from '@/assets/competencias/3.jpeg';
@@ -11,6 +19,8 @@ import photo6 from '@/assets/competencias/6.jpeg';
 import photo7 from '@/assets/competencias/7.jpeg';
 import photo8 from '@/assets/competencias/8.jpeg';
 import photo9 from '@/assets/competencias/9.jpeg';
+import nurmagomebotImg from '@/assets/robots/Nurmagomebot.jpeg';
+import caronteImg from '@/assets/robots/Caronte.jpeg';
 
 const CompetitionsSection = () => {
   const { t, language } = useLanguage();
@@ -18,6 +28,33 @@ const CompetitionsSection = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
+
+  const robots = [
+    { 
+      id: 0, 
+      image: nurmagomebotImg, 
+      nameEs: 'Nurmagomebot - Sumo RC 3Lbs', 
+      nameEn: 'Nurmagomebot - Sumo RC 3Lbs', 
+      competitionEs: 'EAN Bot 2025',
+      competitionEn: 'EAN Bot 2025',
+      positionEs: 'Campeón - 1er Lugar',
+      positionEn: 'Champion - 1st Place',
+      descriptionEs: 'Robot de sumo radiocontrolado de 3 libras diseñado para competencias de empuje y estrategia. Equipado con sensores de proximidad y sistema de tracción optimizado.', 
+      descriptionEn: 'Radio-controlled 3-pound sumo robot designed for pushing and strategy competitions. Equipped with proximity sensors and optimized traction system.' 
+    },
+    { 
+      id: 1, 
+      image: caronteImg, 
+      nameEs: 'Caronte - Robot de batalla 1Lbs', 
+      nameEn: 'Caronte - Battle Robot 1Lbs', 
+      competitionEs: 'RHA Robotics Internacional Batalla 1L',
+      competitionEn: 'RHA International Robotics Battle 1L',
+      positionEs: 'Fase de grupos',
+      positionEn: 'Group Stage',
+      descriptionEs: 'Robot de combate de 1 libra con sistema de arma activa. Diseñado para batallas de alta velocidad con chasis resistente y movilidad superior.', 
+      descriptionEn: '1-pound battle robot with active weapon system. Designed for high-speed battles with resistant chassis and superior mobility.' 
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,6 +113,61 @@ const CompetitionsSection = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Robots de competencia carousel */}
+        <div className="container mx-auto px-4 mt-20">
+          <div className="text-center mb-12">
+            <h3 className={`text-2xl md:text-4xl font-bold mb-4 text-white ${isInView ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
+              {language === 'en' ? 'Competition Robots' : 'Robots de competencia'}
+            </h3>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {robots.map((robot) => (
+                  <CarouselItem key={robot.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                    <Card className="h-full border-2 border-white overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={robot.image}
+                          alt={language === 'en' ? robot.nameEn : robot.nameEs}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      </div>
+                      <CardContent className="p-6 md:p-8 text-black">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Trophy className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold mb-1 text-black">{language === 'en' ? robot.nameEn : robot.nameEs}</h3>
+                            <p className="text-primary font-medium">{language === 'en' ? robot.competitionEn : robot.competitionEs}</p>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-block px-3 py-1 rounded-full bg-primary/20 border border-primary">
+                            <span className="text-sm font-bold text-primary">{language === 'en' ? robot.positionEn : robot.positionEs}</span>
+                          </div>
+                        </div>
+                        <p className="text-black/80 leading-relaxed text-sm">
+                          {language === 'en' ? robot.descriptionEn : robot.descriptionEs}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>

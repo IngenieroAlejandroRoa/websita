@@ -28,6 +28,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.name': 'Alejandro Roa',
     'hero.title1': 'Mechatronics Engineer',
     'hero.title2': 'Software Engineer',
+    'hero.focus': 'Focus on robotics and applied artificial intelligence, from physical integration and computer vision to automation and scalable cloud solutions.',
     'hero.cta': 'View My Work',
     'hero.contact': 'Contact Me',
     
@@ -136,6 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.name': 'Alejandro Roa',
     'hero.title1': 'Ingeniero Mecatrónico',
     'hero.title2': 'Ingeniero de Software',
+    'hero.focus': 'Enfoque en robótica e inteligencia artificial aplicada, desde la integración física y visión artificial hasta la automatización y soluciones cloud escalables.',
     'hero.cta': 'Ver Mi Trabajo',
     'hero.contact': 'Contáctame',
     

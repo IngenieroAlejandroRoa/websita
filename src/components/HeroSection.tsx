@@ -69,10 +69,13 @@ const HeroSection = () => {
                 <p className="text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-red-600 to-white bg-clip-text text-transparent animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
                   {t('hero.title2')}
                 </p>
+                <p className="text-sm md:text-base lg:text-lg text-white/90 mt-4 max-w-2xl animate-fade-in" style={{ animationDelay: '1s' }}>
+                  {t('hero.focus')}
+                </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '1s' }}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '1.2s' }}>
                 <Button
                   size="lg"
                   onClick={scrollToProjects}
@@ -91,7 +94,7 @@ const HeroSection = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '1.2s' }}>
+              <div className="flex gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '1.4s' }}>
                 <a
                   href="https://github.com/IngenieroAlejandroRoa"
                   target="_blank"

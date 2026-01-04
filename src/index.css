@@ -215,3 +215,23 @@ All colors MUST be HSL.
     box-shadow: -5px 4px 50px 3px rgba(255, 255, 255, 0.4);
   }
 }
+
+/* Infinite carousel scroll animation */
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+}

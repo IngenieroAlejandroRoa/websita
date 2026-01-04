@@ -15,32 +15,14 @@ import nasaImg from '@/assets/proyectos/Analisis de datos de la NASA.png';
 import visionImg from '@/assets/proyectos/Automatización con vision artifical.jpeg';
 import brazoImg from '@/assets/proyectos/Brazo robotico con Vision Artificial.jpeg';
 import guitarImg from '@/assets/proyectos/GuitarBot.jpeg';
+import chatbotImg from '@/assets/proyectos/chatbot.png';
+import navegacionImg from '@/assets/proyectos/navegacionautonoma.png';
+import servidorImg from '@/assets/proyectos/servidor.png';
+import awsImg from '@/assets/proyectos/aws.png';
 
 const projects = [
   {
     id: 1,
-    title: 'NASA Data Analysis',
-    titleEs: 'Análisis de Datos de la NASA',
-    description: 'Data analysis and visualization project using NASA datasets.',
-    descriptionEs: 'Proyecto de análisis y visualización de datos utilizando conjuntos de datos de la NASA.',
-    tags: ['Python', 'Data Science', 'Visualization'],
-    image: nasaImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
-  },
-  {
-    id: 2,
-    title: 'Automation with Computer Vision',
-    titleEs: 'Automatización con Visión Artificial',
-    description: 'Automated system using computer vision for industrial applications.',
-    descriptionEs: 'Sistema automatizado usando visión artificial para aplicaciones industriales.',
-    tags: ['Python', 'OpenCV', 'AI'],
-    image: visionImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
-  },
-  {
-    id: 3,
     title: 'Robotic Arm with Computer Vision',
     titleEs: 'Brazo Robótico con Visión Artificial',
     description: 'Robotic arm integrated with computer vision for precision control.',
@@ -51,13 +33,79 @@ const projects = [
     demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
+    id: 2,
+    title: 'Serverless Cloud Architecture Design on AWS',
+    titleEs: 'Diseño de Arquitectura Cloud Serverless en AWS',
+    description: 'Serverless cloud architecture design using AWS services for scalable applications.',
+    descriptionEs: 'Diseño de arquitectura cloud serverless utilizando servicios de AWS para aplicaciones escalables.',
+    tags: ['AWS', 'Lambda', 'Serverless'],
+    image: awsImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 3,
+    title: 'Environmental Lab with Autonomous Navigation',
+    titleEs: 'Laboratorio Ambiental con Navegación Autónoma',
+    description: 'Autonomous robotic system for environmental monitoring and data collection.',
+    descriptionEs: 'Sistema robótico autónomo para monitoreo ambiental y recolección de datos.',
+    tags: ['ROS', 'Autonomous Navigation', 'IoT'],
+    image: navegacionImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
     id: 4,
-    title: 'GuitarBot',
-    titleEs: 'GuitarBot',
+    title: 'ChatBot - Custom LMM Integration',
+    titleEs: 'ChatBot - Integración de LMM Custom',
+    description: 'Custom chatbot powered by Large Multimodal Models for enhanced interactions.',
+    descriptionEs: 'ChatBot personalizado impulsado por Modelos de Lenguaje Multimodal para interacciones mejoradas.',
+    tags: ['Python', 'LMM', 'AI'],
+    image: chatbotImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 5,
+    title: 'Machine Automation with Computer Vision',
+    titleEs: 'Automatización de Máquinas con Visión Artificial',
+    description: 'Automated system using computer vision for industrial machine control.',
+    descriptionEs: 'Sistema automatizado usando visión artificial para control de maquinaria industrial.',
+    tags: ['Python', 'OpenCV', 'Automation'],
+    image: visionImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 6,
+    title: 'GuitarBot - Guitar Playing Robot',
+    titleEs: 'GuitarBot - Robot que Toca la Guitarra',
     description: 'Automated guitar playing robot with musical note recognition.',
     descriptionEs: 'Robot que toca guitarra automáticamente con reconocimiento de notas musicales.',
     tags: ['Arduino', 'Robotics', 'Music'],
     image: guitarImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 7,
+    title: 'NASA Data Pipeline',
+    titleEs: 'Pipeline de Datos de la NASA',
+    description: 'Data pipeline and analysis project using NASA datasets.',
+    descriptionEs: 'Pipeline y análisis de datos utilizando conjuntos de datos de la NASA.',
+    tags: ['Python', 'Data Pipeline', 'NASA'],
+    image: nasaImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 8,
+    title: 'Own Server',
+    titleEs: 'Servidor Propio',
+    description: 'Custom server setup and configuration for hosting applications.',
+    descriptionEs: 'Configuración de servidor personalizado para alojar aplicaciones.',
+    tags: ['Linux', 'Server', 'DevOps'],
+    image: servidorImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
     demo: 'https://github.com/IngenieroAlejandroRoa',
   },
@@ -119,7 +167,7 @@ const ProjectsCarousel = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-4 left-4 right-4 flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                         <Button
                           size="sm"
                           variant="secondary"
