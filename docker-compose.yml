@@ -2,29 +2,16 @@ services:
   website:
     build: 
       context: .
-      target: development
     container_name: alejandroroa-websita
     restart: unless-stopped
     ports:
-      - "8080:5173"
+      - "8080:80"
     networks:
       - website_network
     depends_on:
       - backend
-    volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./index.html:/app/index.html
-      - ./vite.config.ts:/app/vite.config.ts
-      - ./tailwind.config.ts:/app/tailwind.config.ts
-      - ./tsconfig.json:/app/tsconfig.json
-      - ./tsconfig.app.json:/app/tsconfig.app.json
-      - /app/node_modules
-    environment:
-      - VITE_HOST=0.0.0.0
-    command: npm run dev -- --host 0.0.0.0
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5173/"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
       interval: 30s
       timeout: 10s
       retries: 3
