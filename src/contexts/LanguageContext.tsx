@@ -29,7 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title1': 'Mechatronics Engineer',
     'hero.title2': 'Software Engineer',
     'hero.focus': 'Focus on robotics and applied artificial intelligence, from physical integration and computer vision to automation and scalable cloud solutions.',
-    'hero.cta': 'View My Work',
+    'hero.cta': 'View My CV',
     'hero.contact': 'Contact Me',
     
     // Carousel
@@ -115,7 +115,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     'footer.sourceCode': 'Website source code',
-    'footer.lastUpdate': 'Last updated December 2025 by',
+    'footer.lastUpdate': 'Last updated January 2026 by',
     'footer.rights': 'All rights reserved.',
   },
   es: {
@@ -138,7 +138,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title1': 'Ingeniero Mecatrónico',
     'hero.title2': 'Ingeniero de Software',
     'hero.focus': 'Enfoque en robótica e inteligencia artificial aplicada, desde la integración física y visión artificial hasta la automatización y soluciones cloud escalables.',
-    'hero.cta': 'Ver Mi Trabajo',
+    'hero.cta': 'Ver Mi CV',
     'hero.contact': 'Contáctame',
     
     // Carousel
@@ -224,7 +224,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     'footer.sourceCode': 'Código fuente de la web',
-    'footer.lastUpdate': 'Última actualización diciembre 2025 por',
+    'footer.lastUpdate': 'Última actualización enero 2026 por',
     'footer.rights': 'Todos los derechos reservados.',
   }
 };

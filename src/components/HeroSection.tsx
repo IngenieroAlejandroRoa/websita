@@ -1,6 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, FileText } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import heroVideo from '@/assets/fondo1.mp4';
 import profilePhoto from '@/assets/me3.png';
 
@@ -19,6 +25,11 @@ const HeroSection = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openCV = (lang: 'es' | 'en') => {
+    const cvPath = lang === 'es' ? '/cv/cv-es.pdf' : '/cv/cv-en.pdf';
+    window.open(cvPath, '_blank');
   };
 
   return (
@@ -48,7 +59,7 @@ const HeroSection = () => {
             <img 
               src={profilePhoto} 
               alt="Alejandro Roa Aparicio" 
-              className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] object-contain drop-shadow-2xl"
+              className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] object-contain object-bottom drop-shadow-2xl"
             />
           </div>
 
@@ -76,13 +87,31 @@ const HeroSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                <Button
-                  size="lg"
-                  onClick={scrollToProjects}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
-                >
-                  {t('hero.cta')}
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+                    >
+                      <FileText className="h-5 w-5 mr-2" />
+                      {t('hero.cta')}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-card border-border">
+                    <DropdownMenuItem 
+                      onClick={() => openCV('es')}
+                      className="cursor-pointer hover:bg-primary/10"
+                    >
+                      📄 Español
+                    </DropdownMenuItem>
+                    <DropdownMenuItem 
+                      onClick={() => openCV('en')}
+                      className="cursor-pointer hover:bg-primary/10"
+                    >
+                      📄 English
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
                 <Button
                   size="lg"
                   variant="outline"
