@@ -37,12 +37,12 @@ import {
 } from 'lucide-react';
 
 const learningItems = [
-  { name: 'Machine Learning & Deep Learning', nameEs: 'Machine Learning y Deep Learning', icon: Brain, progress: 60 },
-  { name: 'Advanced Robotics: ROS 2, URDF, ISAAC SIM', nameEs: 'Robótica Avanzada: ROS 2, URDF, ISAAC SIM', icon: Cpu, progress: 70 },
-  { name: 'Cloud Architecture', nameEs: 'Arquitectura en la Nube', icon: Globe, progress: 45 },
-  { name: 'IoT Systems ESP32', nameEs: 'Sistemas IoT ESP32', icon: Zap, progress: 55 },
-  { name: 'Linux & Raspberry Pi', nameEs: 'Linux y Raspberry Pi', icon: Code, progress: 65 },
-  { name: 'Computer Vision', nameEs: 'Visión por Computador', icon: Target, progress: 50 },
+  { name: 'Machine Learning & Deep Learning', nameEs: 'Machine Learning y Deep Learning', icon: Brain, progress: 100 },
+  { name: 'Advanced Robotics: ROS 2, URDF, ISAAC SIM', nameEs: 'Robótica Avanzada: ROS 2, URDF, ISAAC SIM', icon: Cpu, progress: 100 },
+  { name: 'Cloud Architecture', nameEs: 'Arquitectura en la Nube', icon: Globe, progress: 100 },
+  { name: 'IoT Systems ESP32', nameEs: 'Sistemas IoT ESP32', icon: Zap, progress: 100 },
+  { name: 'Linux & Raspberry Pi', nameEs: 'Linux y Raspberry Pi', icon: Code, progress: 100 },
+  { name: 'Computer Vision', nameEs: 'Visión por Computador', icon: Target, progress: 100 },
 ];
 
 const skills = [
