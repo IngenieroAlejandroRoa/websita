@@ -295,21 +295,26 @@ cd ~/Documents/websita/Chat
 
 ### Producción (Docker Compose)
 
+**⚠️ IMPORTANTE:** Iniciar el chatbot PRIMERO para crear la red Docker.
+
 ```bash
 cd ~/Documents/websita
 
-# Configurar variables de entorno
+# 1. Configurar variables de entorno
 cp .env.backend.example .env.backend
 nano .env.backend  # Agregar credenciales SMTP reales
 
-# Deploy automático
+# 2. Iniciar chatbot PRIMERO (crea la red chat_chatbot-network)
+cd Chat
+./start-chatbot.sh
+# Espera 10-15 minutos la primera vez (descarga modelo LLaMA ~5GB)
+
+# 3. Iniciar frontend + backend (en otra terminal)
+cd ~/Documents/websita
 ./deploy.sh
 
-# O manual
-docker compose up -d --build
-
-# Verificar
-docker compose ps
+# 4. Verificar todos los servicios
+docker ps
 curl http://localhost:8080
 curl http://localhost:3001/api/health
 curl http://localhost:8000/health
