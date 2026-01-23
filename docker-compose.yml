@@ -1,7 +1,7 @@
 services:
   website:
     build: 
-      context: .
+      context: ./frontend
     container_name: alejandroroa-websita
     restart: unless-stopped
     ports:

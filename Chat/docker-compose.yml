@@ -1,0 +1,38 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    # NO exponemos puertos - solo red interna
+    networks:
+      - chatbot-network
+    volumes:
+      - ollama:/root/.ollama
+    environment:
+      - OMP_NUM_THREADS=4
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    container_name: rag-api
+    ports:
+      - "8000:8000"  # Solo exponemos la API
+    volumes:
+      - ./api/data:/app/data
+      - ./api/chroma_db:/app/chroma_db
+      - ../CV:/app/cv_data:ro  # Montar CV como solo lectura
+      - ../src/contexts:/app/web_data:ro  # Montar contextos web
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+
+networks:
+  chatbot-network:
+    driver: bridge
+    internal: false  # false para que la API pueda salir a internet si necesita
+
+volumes:
+  ollama:
