@@ -118,11 +118,25 @@ Un asistente virtual inteligente que:
 
 ## 🚀 Inicio Rápido
 
-### 1️⃣ Levantar el Backend
+### 🏠 Desarrollo Local
 
 ```bash
 cd ~/Documents/websita/Chat
 ./start-chatbot.sh
+```
+
+### 🚀 Producción (LXC)
+
+**IMPORTANTE:** En producción necesitas dos pasos:
+
+```bash
+cd /websita/Chat
+
+# 1. Iniciar servicios
+./start-chatbot.sh
+
+# 2. Generar base de datos (CRÍTICO)
+./generate-database.sh
 ```
 
 **Primera vez:**
@@ -135,14 +149,15 @@ cd ~/Documents/websita/Chat
 - Verifica y levanta servicios
 - Reutiliza modelo y base de datos existente
 
-### 2️⃣ Levantar el Frontend
+### ✅ Verificar que funciona
 
 ```bash
-cd ~/Documents/websita
-npm run dev
-```
+# Debe mostrar: "collection_ready": true
+curl http://localhost:8000/health
 
-### 3️⃣ Usar el Chat
+# Si muestra "collection_ready": false, ejecuta:
+./generate-database.sh
+```
 
 **Opción A - Desde la web:**
 - Abre http://localhost:8080
