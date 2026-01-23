@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-package-lock.json
+# package-lock.json - NECESARIO para builds reproducibles en producción
 
 # Build output
 dist/
