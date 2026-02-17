@@ -19,6 +19,7 @@ import chatbotImg from '@/assets/proyectos/chatbot.png';
 import navegacionImg from '@/assets/proyectos/navegacionautonoma.png';
 import servidorImg from '@/assets/proyectos/servidor.png';
 import awsImg from '@/assets/proyectos/aws.png';
+import impresora3dImg from '@/assets/proyectos/impresora.png';
 
 const projects = [
   {
@@ -106,6 +107,17 @@ const projects = [
     descriptionEs: 'Configuración de servidor personalizado para alojar aplicaciones.',
     tags: ['Linux', 'Server', 'DevOps'],
     image: servidorImg,
+    github: 'https://github.com/IngenieroAlejandroRoa',
+    demo: 'https://github.com/IngenieroAlejandroRoa',
+  },
+  {
+    id: 9,
+    title: 'Large Format 3D Printer',
+    titleEs: 'Impresora 3D Gran Formato',
+    description: 'Custom large format 3D printer design and construction for industrial applications.',
+    descriptionEs: 'Diseño y construcción de impresora 3D de gran formato para aplicaciones industriales.',
+    tags: ['3D Printing', 'Mechanical Design', 'Fabrication'],
+    image: impresora3dImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
     demo: 'https://github.com/IngenieroAlejandroRoa',
   },

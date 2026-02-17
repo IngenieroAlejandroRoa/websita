@@ -48,7 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'The Engineer Behind the Screen',
-    'about.description': 'Behind this profession, I am a passionate person who overflows with intensity, for basketball, being a university champion. I participate in powerlifting, love my family, partner, and friends intensely, enjoy driving, good cinema, art, and philosophy—how not to be entertained with Diogenes the dog? And of course, I am a geek passionate about technology and science. But above all, I am a dreamer, and right now there is one very big goal: someday, my own research and development center in Bogotá, Colombia, supporting the talent from where I grew up.',
+    'about.description': 'Behind this profession, I am a passionate person who overflows with intensity, for basketball, being a university champion. I participate in powerlifting, love my family and friends intensely, enjoy driving, good cinema, art, and philosophy—how not to be entertained with Diogenes the dog? And of course, I am a geek passionate about technology and science. But above all, I am a dreamer, and right now there is one very big goal: someday, my own research and development center in Bogotá, Colombia, supporting the talent from where I grew up.',
     
     // Experience
     'experience.title': 'Work Experience',
@@ -157,7 +157,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Acerca de
     'about.title': 'El Ingeniero Detrás de la Pantalla',
-    'about.description': 'Detrás de esta profesión soy una persona apasionada, desbordante de intensidad, por el basketball siendo campeón universitario, participo en powerlifting, amo con intensidad a mi familia, pareja y amigos, me encanta conducir, el buen cine, el arte, la filosofía, cómo no entretenerse con Diógenes el perro, y por supuesto soy un geek apasionado por la tecnología y la ciencia, pero sobre todo soy un soñador y en este momento hay 1 objetivo muy grande, algún día mi propio centro de investigación y desarrollo en Bogotá Colombia apoyando el talento de donde crecí.',
+    'about.description': 'Detrás de esta profesión soy una persona apasionada, desbordante de intensidad, por el basketball siendo campeón universitario, participo en powerlifting, amo con intensidad a mi familia y amigos, me encanta conducir, el buen cine, el arte, la filosofía, cómo no entretenerse con Diógenes el perro, y por supuesto soy un geek apasionado por la tecnología y la ciencia, pero sobre todo soy un soñador y en este momento hay 1 objetivo muy grande, algún día mi propio centro de investigación y desarrollo en Bogotá Colombia apoyando el talento de donde crecí.',
     
     // Experiencia
     'experience.title': 'Experiencia Laboral',
