@@ -21,6 +21,13 @@ import navegacionImg from '@/assets/proyectos/navegacionautonoma.png';
 import servidorImg from '@/assets/proyectos/servidor.png';
 import awsImg from '@/assets/proyectos/aws.png';
 import impresora3dImg from '@/assets/proyectos/impresora.png';
+// Import demo videos
+import brazoRoboticoVideo from '@/assets/proyectos/DEMO/Brazo Robotico.mp4';
+import laboratorioVideo from '@/assets/proyectos/DEMO/laboratorio autonomo.mp4';
+import maquinaAutomatizadaVideo from '@/assets/proyectos/DEMO/Maquina automatizada.mp4';
+import guitarBotVideo from '@/assets/proyectos/DEMO/GuitarBot.mp4';
+import impresora3dVideo from '@/assets/proyectos/DEMO/Impresora3d.mp4';
+import awsDemoImg from '@/assets/proyectos/DEMO/aws.png';
 
 const projects = [
   {
@@ -32,7 +39,7 @@ const projects = [
     tags: ['OpenCV', 'Computer vision', 'Robotics'],
     image: brazoImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: '/src/assets/proyectos/DEMO/Brazo Robotico.mp4',
+    demo: brazoRoboticoVideo,
     demoType: 'video',
   },
   {
@@ -43,7 +50,7 @@ const projects = [
     descriptionEs: 'Diseño de arquitectura cloud serverless utilizando servicios de AWS para aplicaciones escalables.',
     tags: ['AWS', 'Lambda', 'Serverless'],
     image: awsImg,
-    demo: '/src/assets/proyectos/DEMO/aws.png',
+    demo: awsDemoImg,
     demoType: 'image',
   },
   {
@@ -55,7 +62,7 @@ const projects = [
     tags: ['ROS', 'Autonomous Navigation', 'IoT'],
     image: navegacionImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: '/src/assets/proyectos/DEMO/laboratorio autonomo.mp4',
+    demo: laboratorioVideo,
     demoType: 'video',
   },
   {
@@ -79,7 +86,7 @@ const projects = [
     tags: ['Python', 'OpenCV', 'Automation'],
     image: visionImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: '/src/assets/proyectos/DEMO/Maquina automatizada.mp4',
+    demo: maquinaAutomatizadaVideo,
     demoType: 'video',
   },
   {
@@ -91,7 +98,7 @@ const projects = [
     tags: ['ESP32', 'Robotics', 'Music'],
     image: guitarImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: '/src/assets/proyectos/DEMO/GuitarBot.mp4',
+    demo: guitarBotVideo,
     demoType: 'video',
   },
   {
@@ -121,7 +128,7 @@ const projects = [
     descriptionEs: 'Diseño y construcción de impresora 3D de gran formato para aplicaciones industriales.',
     tags: ['3D Printing', 'Mechanical Design', 'Fabrication'],
     image: impresora3dImg,
-    demo: '/src/assets/proyectos/DEMO/Impresora3d.mp4',
+    demo: impresora3dVideo,
     demoType: 'video',
   },
 ];
@@ -273,11 +280,13 @@ const ProjectsCarousel = () => {
               <div className="p-4">
                 {demoModal.type === 'video' ? (
                   <video
-                    src={demoModal.content}
                     controls
                     autoPlay
                     className="w-full max-h-[80vh] rounded"
-                  />
+                  >
+                    <source src={demoModal.content} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 ) : demoModal.type === 'image' ? (
                   <img
                     src={demoModal.content}
