@@ -10,6 +10,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Calendar, ChevronsRight } from 'lucide-react';
 import researchImg from '@/assets/work experience/research.png';
+import edgarImg from '@/assets/work experience/edgar.png';
 import juniorImg from '@/assets/work experience/junior.jpg';
 import teacherImg from '@/assets/work experience/teacher.png';
 import circuitsImg from '@/assets/work experience/circuits.jpeg';
@@ -21,10 +22,11 @@ const ExperienceCarousel = () => {
 
   const experiences = [
     { id: 0, image: researchImg },
-    { id: 1, image: juniorImg },
-    { id: 2, image: teacherImg },
-    { id: 3, image: circuitsImg },
-    { id: 4, image: electronicImg },
+    { id: 1, image: edgarImg },
+    { id: 2, image: juniorImg },
+    { id: 3, image: teacherImg },
+    { id: 4, image: circuitsImg },
+    { id: 5, image: electronicImg },
   ];
 
   return (

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from '@/hooks/useInView';
 import {
@@ -10,7 +11,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, ChevronRight, ChevronsRight } from 'lucide-react';
+import { ExternalLink, Github, ChevronRight, ChevronsRight, X } from 'lucide-react';
 import nasaImg from '@/assets/proyectos/Analisis de datos de la NASA.png';
 import visionImg from '@/assets/proyectos/Automatización con vision artifical.jpeg';
 import brazoImg from '@/assets/proyectos/Brazo robotico con Vision Artificial.jpeg';
@@ -28,10 +29,11 @@ const projects = [
     titleEs: 'Brazo Robótico con Visión Artificial',
     description: 'Robotic arm integrated with computer vision for precision control.',
     descriptionEs: 'Brazo robótico integrado con visión artificial para control de precisión.',
-    tags: ['ROS', 'Computer Vision', 'Robotics'],
+    tags: ['OpenCV', 'Computer vision', 'Robotics'],
     image: brazoImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/Brazo Robotico.mp4',
+    demoType: 'video',
   },
   {
     id: 2,
@@ -41,8 +43,8 @@ const projects = [
     descriptionEs: 'Diseño de arquitectura cloud serverless utilizando servicios de AWS para aplicaciones escalables.',
     tags: ['AWS', 'Lambda', 'Serverless'],
     image: awsImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/aws.png',
+    demoType: 'image',
   },
   {
     id: 3,
@@ -53,7 +55,8 @@ const projects = [
     tags: ['ROS', 'Autonomous Navigation', 'IoT'],
     image: navegacionImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/laboratorio autonomo.mp4',
+    demoType: 'video',
   },
   {
     id: 4,
@@ -61,10 +64,11 @@ const projects = [
     titleEs: 'ChatBot - Integración de LMM Custom',
     description: 'Custom chatbot powered by Large Multimodal Models for enhanced interactions.',
     descriptionEs: 'ChatBot personalizado impulsado por Modelos de Lenguaje Multimodal para interacciones mejoradas.',
-    tags: ['Python', 'LMM', 'AI'],
+    tags: ['RAG', 'LMM', 'AI', 'Python'],
     image: chatbotImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    github: 'https://github.com/IngenieroAlejandroRoa/websita/tree/master/Chat',
+    demo: '#chatbot',
+    demoType: 'link',
   },
   {
     id: 5,
@@ -75,7 +79,8 @@ const projects = [
     tags: ['Python', 'OpenCV', 'Automation'],
     image: visionImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/Maquina automatizada.mp4',
+    demoType: 'video',
   },
   {
     id: 6,
@@ -83,10 +88,11 @@ const projects = [
     titleEs: 'GuitarBot - Robot que Toca la Guitarra',
     description: 'Automated guitar playing robot with musical note recognition.',
     descriptionEs: 'Robot que toca guitarra automáticamente con reconocimiento de notas musicales.',
-    tags: ['Arduino', 'Robotics', 'Music'],
+    tags: ['ESP32', 'Robotics', 'Music'],
     image: guitarImg,
     github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/GuitarBot.mp4',
+    demoType: 'video',
   },
   {
     id: 7,
@@ -96,19 +102,16 @@ const projects = [
     descriptionEs: 'Pipeline y análisis de datos utilizando conjuntos de datos de la NASA.',
     tags: ['Python', 'Data Pipeline', 'NASA'],
     image: nasaImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    github: 'https://github.com/IngenieroAlejandroRoa/Proyecto-ETL---Pipeline-de-Datos-para-An-lisis-de-Ventas-de-Retail',
   },
   {
     id: 8,
     title: 'Own Server',
     titleEs: 'Servidor Propio',
-    description: 'Custom server setup and configuration for hosting applications.',
-    descriptionEs: 'Configuración de servidor personalizado para alojar aplicaciones.',
+    description: 'Custom server setup and configuration for hosting applications. This website is hosted on this server.',
+    descriptionEs: 'Configuración de servidor personalizado para alojar aplicaciones. Esta página web está montada en este servidor.',
     tags: ['Linux', 'Server', 'DevOps'],
     image: servidorImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
   },
   {
     id: 9,
@@ -118,17 +121,26 @@ const projects = [
     descriptionEs: 'Diseño y construcción de impresora 3D de gran formato para aplicaciones industriales.',
     tags: ['3D Printing', 'Mechanical Design', 'Fabrication'],
     image: impresora3dImg,
-    github: 'https://github.com/IngenieroAlejandroRoa',
-    demo: 'https://github.com/IngenieroAlejandroRoa',
+    demo: '/src/assets/proyectos/DEMO/Impresora3d.mp4',
+    demoType: 'video',
   },
 ];
 
 const ProjectsCarousel = () => {
   const { t, language } = useLanguage();
   const { ref, isInView } = useInView();
+  const [demoModal, setDemoModal] = useState<{ isOpen: boolean; content: string; type: string } | null>(null);
 
   // Duplicate projects for infinite loop
   const loopedProjects = [...projects, ...projects];
+
+  const openDemoModal = (demo: string, demoType: string) => {
+    setDemoModal({ isOpen: true, content: demo, type: demoType });
+  };
+
+  const closeDemoModal = () => {
+    setDemoModal(null);
+  };
 
   return (
     <section id="all-projects" ref={ref} className="py-20 md:py-32 bg-white text-black" data-aos="fade-up">
@@ -171,7 +183,7 @@ const ProjectsCarousel = () => {
             <CarouselContent className="-ml-4">
               {loopedProjects.map((project, index) => (
                 <CarouselItem key={`${project.id}-${index}`} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <Card className="group overflow-hidden border-2 border-black shadow-lg hover:shadow-xl transition-all duration-500">
+                  <Card className="group overflow-hidden border-2 border-black shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col">
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={project.image}
@@ -180,34 +192,49 @@ const ProjectsCarousel = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="absolute bottom-4 left-4 right-4 flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="flex-1"
-                          asChild
-                        >
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="h-4 w-4 mr-1" />
-                            Code
-                          </a>
-                        </Button>
-                        <Button
-                          size="sm"
-                          className="flex-1"
-                          asChild
-                        >
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-4 w-4 mr-1" />
-                            Demo
-                          </a>
-                        </Button>
+                        {project.github && (
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="flex-1"
+                            asChild
+                          >
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              <Github className="h-4 w-4 mr-1" />
+                              Code
+                            </a>
+                          </Button>
+                        )}
+                        {project.demo && (
+                          project.demoType === 'link' ? (
+                            <Button
+                              size="sm"
+                              className="flex-1"
+                              asChild
+                            >
+                              <a href={project.demo}>
+                                <ExternalLink className="h-4 w-4 mr-1" />
+                                Demo
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button
+                              size="sm"
+                              className="flex-1"
+                              onClick={() => openDemoModal(project.demo!, project.demoType || 'video')}
+                            >
+                              <ExternalLink className="h-4 w-4 mr-1" />
+                              Demo
+                            </Button>
+                          )
+                        )}
                       </div>
                     </div>
-                    <CardContent className="p-6 text-black">
+                    <CardContent className="p-6 text-black flex-1 flex flex-col min-h-[200px]">
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {language === 'en' ? project.title : project.titleEs}
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
                         {language === 'en' ? project.description : project.descriptionEs}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -226,6 +253,42 @@ const ProjectsCarousel = () => {
             <CarouselNext className="hidden md:flex -right-12 bg-primary text-white hover:bg-primary/90 border-0" />
           </Carousel>
         </div>
+
+        {/* Demo Modal */}
+        {demoModal && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={closeDemoModal}
+          >
+            <div 
+              className="relative max-w-5xl w-full mx-4 bg-white rounded-lg shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeDemoModal}
+                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              <div className="p-4">
+                {demoModal.type === 'video' ? (
+                  <video
+                    src={demoModal.content}
+                    controls
+                    autoPlay
+                    className="w-full max-h-[80vh] rounded"
+                  />
+                ) : demoModal.type === 'image' ? (
+                  <img
+                    src={demoModal.content}
+                    alt="Demo"
+                    className="w-full max-h-[80vh] object-contain rounded"
+                  />
+                ) : null}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
