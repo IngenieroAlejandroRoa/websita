@@ -53,7 +53,7 @@ Portafolio web profesional completo que incluye:
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PROXMOX HOST SERVER                          │
 │  ┌───────────────────────────────────────────────────────────┐  │
-│  │              LXC CONTAINER (Ubuntu)                       │  │
+│  │              LXC CONTAINER (Debian)                       │  │
 │  │                                                           │  │
 │  │  ┌─────────────────────────────────────────────────────┐ │  │
 │  │  │           DOCKER COMPOSE NETWORK                    │ │  │
