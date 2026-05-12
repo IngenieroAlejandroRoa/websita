@@ -28,7 +28,10 @@ const HeroSection = () => {
   };
 
   const openCV = (lang: 'es' | 'en') => {
-    const cvPath = lang === 'es' ? '/cv/cv-es.pdf' : '/cv/cv-en.pdf';
+    const timestamp = new Date().getTime();
+    const cvPath = lang === 'es' 
+      ? `/cv/cv-es.pdf?v=${timestamp}` 
+      : `/cv/cv-en.pdf?v=${timestamp}`;
     window.open(cvPath, '_blank');
   };
 
