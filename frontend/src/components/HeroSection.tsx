@@ -30,8 +30,8 @@ const HeroSection = () => {
   const openCV = (lang: 'es' | 'en') => {
     const timestamp = new Date().getTime();
     const cvPath = lang === 'es' 
-      ? `/cv/cv-es.pdf?v=${timestamp}` 
-      : `/cv/cv-en.pdf?v=${timestamp}`;
+      ? `/cv/CV_Alejandro_Roa_Ingeniero.pdf?v=${timestamp}`
+      : `/cv/CV_Alejandro_Roa_Engineer.pdf?v=${timestamp}`;
     window.open(cvPath, '_blank');
   };
 
